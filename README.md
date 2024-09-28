@@ -13,4 +13,4 @@ Git Flow , Blocks and packets diagrams.
 
 ---
 
-Made with ❤️ by Your Name
+Made with ❤️ by Amanem at InDES
