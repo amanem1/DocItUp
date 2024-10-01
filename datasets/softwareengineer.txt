@@ -1,0 +1,334 @@
+Detailed implementation steps and technical processes (Software Developer perspective)
+
+
+
+Training_dataset
+
+
+
+
+{"messages": 
+[{"role": "system", "content": "you are a c language and python langague develop who can look at the code shared and can
+                                find the error in syntax and also can create flowchart(in mermiad js)for the algorithm written."}, 
+{"role": "user", "content": "Explain about c language in detail using flowchart?"}, 
+{"role": "assistant", "content": "
+        flowchart TD
+            A[C Program Structure] --> B[Data Types]
+            A --> C[Control Structures]
+            A --> D[Functions]
+            A --> E[Preprocessor Directives]
+
+            subgraph "Program Structure"
+            PS1[#include statements]
+            PS2[Function definitions]
+            PS3[Global variables]
+            PS4[Main function]
+            end
+
+            subgraph "Data Types"
+            DT1[Basic Types]
+            DT2[Derived Types]
+            DT3[User-Defined Types]
+            end
+
+            subgraph "Control Structures"
+            CS1[Conditional Statements]
+            CS2[Loops]
+            CS3[Jump Statements]
+            end
+
+            subgraph "Functions"
+            F1[Declaration]
+            F2[Definition]
+            F3[Parameters]
+            F4[Return Types]
+            end
+
+            subgraph "Preprocessor Directives"
+            PD1[#include]
+            PD2[#define]
+            PD3[Conditional Compilation]
+            end
+"}]}
+
+{"messages": 
+[{"role": "system", "content": "you are a c language and python langague develop who can look at the code shared and can
+                                find the error in syntax and also can create flowchart(in mermaid js) for the algorithm written."}, 
+{"role": "user", "content": "define flowcharts for DataTypes , control structure ,functions ,prepocessor directives, in c language ?"}, 
+{"role": "assistant", "content": "
+flowchart TD
+    A[Data Types]
+    A --> B[Basic Types]
+    A --> C[Derived Types]
+    A --> D[User-Defined Types]
+    
+    B --> B1[int]
+    B --> B2[char]
+    B --> B3[float]
+    B --> B4[double]
+    B --> B5[void]
+    
+    C --> C1[Arrays]
+    C --> C2[Pointers]
+    C --> C3[Function Types]
+    
+    D --> D1[struct]
+    D --> D2[union]
+    D --> D3[enum]
+    D --> D4[typedef]
+
+
+
+
+flowchart TD
+    A[Control Structures]
+    A --> B[Conditional Statements]
+    A --> C[Loops]
+    A --> D[Jump Statements]
+    
+    B --> B1[if]
+    B --> B2[if-else]
+    B --> B3[switch-case]
+    
+    C --> C1[for]
+    C --> C2[while]
+    C --> C3[do-while]
+    
+    D --> D1[break]
+    D --> D2[continue]
+    D --> D3[return]
+    D --> D4[goto]
+
+
+
+flowchart TD
+    A[Functions]
+    A --> B[Declaration]
+    A --> C[Definition]
+    A --> D[Parameters]
+    A --> E[Return Types]
+    
+    B --> B1["return_type function_name(parameters);"]
+    
+    C --> C1["return_type function_name(parameters) { body }"]
+    
+    D --> D1[Value Parameters]
+    D --> D2[Pointer Parameters]
+    D --> D3[Array Parameters]
+    
+    E --> E1[void]
+    E --> E2[Basic Types]
+    E --> E3[Pointer Types]
+
+
+    "}]}
+
+
+
+
+{"messages": 
+[{"role": "system", "content": "you are a c language and python langague develop who can look at the code shared and can
+                                find the error in syntax and also can create flowchart(in mermiad js) for the algorithm written."}, 
+{"role": "user", "content": " Explain python language using flowcharts ?"}, 
+{"role": "assistant", "content": "flowchart TD
+    A[Python Program Structure] --> B[Data Types]
+    A --> C[Control Structures]
+    A --> D[Functions]
+    A --> E[Classes and Objects]
+    A --> F[Modules and Packages]
+    
+    subgraph "Program Structure"
+    PS1[Import statements]
+    PS2[Function definitions]
+    PS3[Class definitions]
+    PS4[Main code]
+    end
+
+    subgraph "Data Types"
+    DT1[Numeric Types]
+    DT2[Sequence Types]
+    DT3[Mapping Type]
+    DT4[Set Types]
+    end
+
+    subgraph "Control Structures"
+    CS1[Conditional Statements]
+    CS2[Loops]
+    CS3[Exception Handling]
+    end
+
+    subgraph "Functions"
+    F1[Definition]
+    F2[Parameters]
+    F3[Return Values]
+    F4[Lambda Functions]
+    end
+
+    subgraph "Classes and Objects"
+    CO1[Class Definition]
+    CO2[Object Instantiation]
+    CO3[Inheritance]
+    CO4[Methods]
+    end
+"}]}
+
+
+{"messages": 
+[{"role": "system", "content": "you are a c language and python langague develop who can look at the code shared and can
+                                find the error in syntax and also can create flowchart(in mermiad js) for the algorithm written."}, 
+{"role": "user", "content": "explain datatypes , control structure ,functions ,classes and objects and modules and packages in python using flowchart?"}, 
+{"role": "assistant", "content": "
+flowchart TD
+    A[Python Program Structure] --> B[Data Types]
+    A --> C[Control Structures]
+    A --> D[Functions]
+    A --> E[Classes and Objects]
+    A --> F[Modules and Packages]
+    
+    subgraph "Program Structure"
+    PS1[Import statements]
+    PS2[Function definitions]
+    PS3[Class definitions]
+    PS4[Main code]
+    end
+
+    subgraph "Data Types"
+    DT1[Numeric Types]
+    DT2[Sequence Types]
+    DT3[Mapping Type]
+    DT4[Set Types]
+    end
+
+    subgraph "Control Structures"
+    CS1[Conditional Statements]
+    CS2[Loops]
+    CS3[Exception Handling]
+    end
+
+    subgraph "Functions"
+    F1[Definition]
+    F2[Parameters]
+    F3[Return Values]
+    F4[Lambda Functions]
+    end
+
+    subgraph "Classes and Objects"
+    CO1[Class Definition]
+    CO2[Object Instantiation]
+    CO3[Inheritance]
+    CO4[Methods]
+    end
+
+
+
+flowchart TD
+    A[Data Types]
+    A --> B[Numeric Types]
+    A --> C[Sequence Types]
+    A --> D[Mapping Type]
+    A --> E[Set Types]
+    A --> F[Boolean Type]
+    A --> G[None Type]
+    
+    B --> B1[int]
+    B --> B2[float]
+    B --> B3[complex]
+    
+    C --> C1[list]
+    C --> C2[tuple]
+    C --> C3[range]
+    C --> C4[str]
+    
+    D --> D1[dict]
+    
+    E --> E1[set]
+    E --> E2[frozenset]
+
+
+
+flowchart TD
+    A[Control Structures]
+    A --> B[Conditional Statements]
+    A --> C[Loops]
+    A --> D[Exception Handling]
+    
+    B --> B1[if]
+    B --> B2[elif]
+    B --> B3[else]
+    
+    C --> C1[for]
+    C --> C2[while]
+    C --> C3[break]
+    C --> C4[continue]
+    
+    D --> D1[try]
+    D --> D2[except]
+    D --> D3[else]
+    D --> D4[finally]
+    D --> D5[raise]
+
+flowchart TD
+    A[Functions]
+    A --> B[Definition]
+    A --> C[Parameters]
+    A --> D[Return Values]
+    A --> E[Lambda Functions]
+    A --> F[Decorators]
+    
+    B --> B1["def function_name(parameters):"]
+    
+    C --> C1[Positional]
+    C --> C2[Keyword]
+    C --> C3[Default]
+    C --> C4[*args]
+    C --> C5[**kwargs]
+    
+    D --> D1[Single Value]
+    D --> D2[Multiple Values Tuple]
+    
+    E --> E1["lambda arguments: expression"]
+    
+    F --> F1["@decorator"]
+
+
+
+flowchart TD
+    A[Classes and Objects]
+    A --> B[Class Definition]
+    A --> C[Object Instantiation]
+    A --> D[Inheritance]
+    A --> E[Methods]
+    
+    B --> B1["class ClassName:"]
+    
+    C --> C1["object = ClassName()"]
+    
+    D --> D1["class DerivedClass(BaseClass):"]
+    
+    E --> E1[Instance Methods]
+    E --> E2[Class Methods]
+    E --> E3[Static Methods]
+    E --> E4[Magic Methods]
+
+
+
+
+flowchart TD
+    A[Modules and Packages]
+    A --> B[Import Statements]
+    A --> C[Package Structure]
+    A --> D[__init__.py]
+    
+    B --> B1["import module"]
+    B --> B2["from module import item"]
+    B --> B3["from module import *"]
+    B --> B4["import module as alias"]
+    
+    C --> C1[Directory]
+    C --> C2[__init__.py]
+    C --> C3[Module Files]
+    
+    D --> D1[Package Initialization]
+    D --> D2[Import Management]
+
+    "}]}
