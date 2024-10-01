@@ -4,14 +4,14 @@ import base64
 from io import BytesIO
 import requests
 from question_session import questions
-from openai_data import get_response_from_gpt3
+from openai_data import get_response_from_gpt3,correct_mermaid_code
 
 user_input = ""
 text_file = ""
 
 ###############################
 
-
+#states available
 if 'current_question' not in st.session_state:
     st.session_state.current_question = 0
 if 'responses' not in st.session_state:
@@ -20,21 +20,6 @@ if 'quiz_finished' not in st.session_state:
     st.session_state.quiz_finished = False
 if 'user_input' not in st.session_state:
     st.session_state.user_input = ""
-# Define your questions
-
-
-
-
-
-
-
-
-
-
-
-
-##################################
-
 
 
 inputs =[]
@@ -156,6 +141,7 @@ def main():
         # Add text input for user feedback
         st.write("Please provide any additional information ")
         user_input = st.text_area("Your input:", value=st.session_state.user_input, height=150)
+        user_input  = f" {user_input} ,give only mermaid js code , dont write a word more than that.  " 
         
         if st.button("Submit "):
             st.session_state.user_input = user_input
@@ -169,7 +155,11 @@ def main():
                 print(role, answer,user_input,text_file)
                 code = clean_mermaid_code(answer)
                 st.subheader("Generated  Diagram:")
-                mermaid_chart = stmd.st_mermaid(code, height=300)
+                mermaid_chart = stmd.st_mermaid(code, height=400)
+                # showing code also now
+                st.subheader("Code:")
+                st.code(code, language='mermaid')
+
                 
                 # Get the SVG content
                 svg_content = mermaid_to_svg(code)
@@ -177,7 +167,15 @@ def main():
                 if svg_content:
                     st.markdown(get_svg_download_link(svg_content), unsafe_allow_html=True)
                 else:
+                    # having a way to again retry the code and fix syntax issues  if any .
+                    updated_code = correct_mermaid_code(code)
+                    mermaid_chart = stmd.st_mermaid(updated_code , height = 400)
+                    svg_content =  mermaid_to_svg(updated_code)
+                    st.subheader("updated Code:")
+                    st.code(code, language='mermaid')
+
                     st.error("Failed to generate SVG. Please try again.")
+
             else:
                 st.warning("Please enter your diagram requirements.")
         
