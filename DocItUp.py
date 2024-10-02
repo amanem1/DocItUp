@@ -82,7 +82,7 @@ def get_svg_download_link(svg_content, filename="diagram.svg"):
 
 
 def main():
-    st.title("Role Identification Quiz")
+    st.title("DocItUp")
     st.subheader("Answer the following questions to identify your role in the team\n can choose more than one option if performing multiple roles")
 
 
@@ -120,7 +120,7 @@ def main():
         pm_count = sum(any(option in response for option in [
             "Defining product features and roadmap",
             "Market analysis and user needs",
-            "Product management software (e.g., Jira, Trello)"
+            "Product management software (e.g., Jira, Trello,zoho)"
         ]) for response in st.session_state.responses)
         
         sle_count = sum(any(option in response for option in [
