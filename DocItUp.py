@@ -280,7 +280,7 @@ def main():
                 existing_output_data , output_file_sha = read_github_output_file()
 
                 if existing_data is None:
-                     updated_text = f"\n{user_input} {role}" 
+                     updated_text = user_input 
                 else:
 
                     updated_text = existing_data + f"\n{user_input} {role}" 
@@ -295,7 +295,7 @@ def main():
                 if svg_content:
                     st.markdown(get_svg_download_link(svg_content), unsafe_allow_html=True)
                     if existing_output_data is None:
-                        updated_output_text = f"\n{code}"
+                        updated_output_text = code
                     else:
                         updated_output_text = existing_output_data +f"\n{code}"
                     update_github_output_file(updated_output_text,output_file_sha)
@@ -308,10 +308,11 @@ def main():
                     svg_content =  mermaid_to_svg(updated_code)
                     st.subheader("updated Code:")
                     st.code(code, language='mermaid')
-                    updated_output_text = existing_output_data +f"\n{updated_code}"
+                    if existing_output_data is None:
+                        updated_output_text = updated_code
+                    else:
+                        updated_output_text = existing_output_data +f"\n{updated_code}"
                     update_github_output_file(updated_output_text,output_file_sha)
-
-                    st.error("Failed to generate SVG. Please try again.")
 
             else:
                 st.warning("Please enter your diagram requirements.")
