@@ -1,1 +1,2 @@
  create mindmap to show mvp to production stage of an app to investors ,give only mermaid js code , dont write a word more than that.  
+ create mindmap to create a app similar to whatsapp ,give only mermaid js code , dont write a word more than that.  
