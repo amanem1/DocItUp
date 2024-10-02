@@ -6,6 +6,8 @@ import requests
 from question_session import questions
 from openai_data import get_response_from_gpt3,correct_mermaid_code
 import streamlit.components.v1 as stmd
+import os
+from pathlib import Path
 
 user_input = ""
 text_file = ""
@@ -43,6 +45,14 @@ if 'user_input' not in st.session_state:
 
 
 inputs =[]
+
+# directory for text file 
+script_dir = Path(__file__).parent.absolute()
+
+# Construct the path to the datasets folder
+datasets_dir = os.path.join(script_dir, 'datasets')
+
+os.makedirs(datasets_dir, exist_ok=True)
 
 
 
@@ -82,7 +92,7 @@ def get_svg_download_link(svg_content, filename="diagram.svg"):
 
 
 def main():
-    st.title("DocItUp")
+    st.title("Role Identification Quiz")
     st.subheader("Answer the following questions to identify your role in the team\n can choose more than one option if performing multiple roles")
 
 
@@ -120,7 +130,7 @@ def main():
         pm_count = sum(any(option in response for option in [
             "Defining product features and roadmap",
             "Market analysis and user needs",
-            "Product management software (e.g., Jira, Trello,zoho)"
+            "Product management software (e.g., Jira, Trello)"
         ]) for response in st.session_state.responses)
         
         sle_count = sum(any(option in response for option in [
@@ -137,13 +147,13 @@ def main():
         
         if pm_count >= sle_count and pm_count >= se_count:
             role = "Product Manager"
-            text_file = r"datasets\manager.txt"
+            text_file = os.path.join(datasets_dir, 'manager.txt')
         elif sle_count >= pm_count and sle_count >= se_count:
             role = "Software Lead Engineer"
-            text_file = r"datasets\leadsoftwaremanager.txt"
+            text_file = os.path.join(datasets_dir, 'leadsoftwaremanager.txt')
         else:
             role = "Software Engineer"
-            text_file = r"datasets\softwareengineer.txt"
+            text_file = os.path.join(datasets_dir, 'softwareengineer.txt')
         
         st.markdown("""
         <style>

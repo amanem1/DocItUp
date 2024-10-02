@@ -75,3 +75,24 @@ Updated flowchart code: flowchart TD
     E --> F[Mark first element as sorted]
     F --> C
     C -- No --> G[End]
+Updated flowchart code: graph TD
+    A[User Interface]
+    B[Frontend Service]
+    C[Backend API Gateway]
+    D[Authentication Service]
+    E[Data Service]
+    F[Cache Service]
+    G[Machine Learning Service]
+    H[Database]
+    I[External API]
+
+    A --> B
+    B --> C
+    C --> D
+    C --> E
+    E --> F
+    E --> H
+    E --> G
+    G --> H
+    F --> E
+    C --> I
