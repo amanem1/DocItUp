@@ -8,9 +8,27 @@ from openai_data import get_response_from_gpt3,correct_mermaid_code
 import streamlit.components.v1 as stmd
 import os
 from pathlib import Path
+from dotenv import load_dotenv
+
+
+GITHUB_REPO = "amanem1/DocItUp"  # Your repo name
+FILE_PATH = "user_search.txt"  # Path to the file you want to update
+FILE_OUTPUT_PATH = "generated_output.txt"
+
+#the path of the .env file should be in the folder only , else please change accordingly
+dotenv_path = Path('flowai/local.env')
+load_dotenv()
+
+
+# Get the api key from the environment  variable
+
+github_key=os.getenv('github_token')
+
 
 user_input = ""
 text_file = ""
+updated_input_text = ""
+updated_output_text = ""
 
 ###############################
 # adding html instead of stmd.streamlit
@@ -29,6 +47,69 @@ def render_mermaid(code):
     </script>
     """
     stmd.html(html, height=500, scrolling=True)
+
+
+
+
+
+
+
+# Function to read the file from GitHub
+def read_github_file():
+    url = f"https://api.github.com/repos/{GITHUB_REPO}/contents/{FILE_PATH}"
+    headers = {"Authorization": f"token {github_key}"}
+    
+    response = requests.get(url, headers=headers)
+    if response.status_code == 200:
+        content = base64.b64decode(response.json()['content']).decode('utf-8')
+        return content, response.json()['sha']  # Return file content and SHA (for updating)
+    else:
+        return None, None
+    
+
+
+def read_github_output_file():
+    url = f"https://api.github.com/repos/{GITHUB_REPO}/contents/{FILE_OUTPUT_PATH}"
+    headers = {"Authorization": f"token {github_key}"}
+    
+    response = requests.get(url, headers=headers)
+    if response.status_code == 200:
+        content = base64.b64decode(response.json()['content']).decode('utf-8')
+        return content, response.json()['sha']  # Return file content and SHA (for updating)
+    else:
+        return None, None
+    
+
+
+
+
+# Function to update the file in GitHub
+
+def update_github_file(new_content, sha):
+    url = f"https://api.github.com/repos/{GITHUB_REPO}/contents/{FILE_PATH}"
+    headers = {"Authorization": f"token {github_key}"}
+    
+    data = {
+        "message": "Updating user search data",
+        "content": base64.b64encode(new_content.encode('utf-8')).decode('utf-8'),
+        "sha": sha
+    }
+    
+    response = requests.put(url, headers=headers, json=data)
+
+
+
+def update_github_output_file(new_content, sha):
+    url = f"https://api.github.com/repos/{GITHUB_REPO}/contents/{FILE_OUTPUT_PATH}"
+    headers = {"Authorization": f"token {github_key}"}
+    
+    data = {
+        "message": "Updating user search data",
+        "content": base64.b64encode(new_content.encode('utf-8')).decode('utf-8'),
+        "sha": sha
+    }
+    
+    response = requests.put(url, headers=headers, json=data)
 ###############################
 
 
@@ -56,10 +137,6 @@ os.makedirs(datasets_dir, exist_ok=True)
 
 
 
-
-def save_to_file(filename, content):
-    with open(filename, 'a') as file:
-        file.write(content + '\n')
 
 
 def clean_mermaid_code(code_block):
@@ -196,8 +273,13 @@ def main():
                 # showing code also now
                 st.subheader("Code to attach in Draw.io (https://app.diagrams.net/) as mermaid extension")
                 st.code(code, language='mermaid')
-                save_to_file('user_search.txt', f"User input: {user_input}")
-                save_to_file('generated_output.txt', f"Updated flowchart code: {code}")
+                existing_data, file_sha = read_github_file()
+                existing_output_data , output_file_sha = read_github_output_file()
+
+                updated_text = existing_data + f"\n{user_input}"
+
+                update_github_file(updated_text,file_sha)
+                
 
                 
                 # Get the SVG content
@@ -205,6 +287,8 @@ def main():
                 
                 if svg_content:
                     st.markdown(get_svg_download_link(svg_content), unsafe_allow_html=True)
+                    updated_output_text = existing_output_data +f"\n{code}"
+                    update_github_output_file(updated_output_text,output_file_sha)
                     
                 else:
                     # having a way to again retry the code and fix syntax issues  if any .
@@ -214,7 +298,8 @@ def main():
                     svg_content =  mermaid_to_svg(updated_code)
                     st.subheader("updated Code:")
                     st.code(code, language='mermaid')
-                    save_to_file('generated_output.txt', f"Updated flowchart code: {updated_code}")
+                    updated_output_text = existing_output_data +f"\n{updated_code}"
+                    update_github_output_file(updated_output_text,output_file_sha)
 
                     st.error("Failed to generate SVG. Please try again.")
 
