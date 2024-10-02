@@ -384,14 +384,15 @@ from dotenv import load_dotenv
 
 # Set up environment
 dotenv_path = Path('flowai/local.env')
-load_dotenv(    )
+load_dotenv()
 
 GITHUB_REPO = "amanem1/DocItUp"
 FILE_PATH = "user_search.txt"
 FILE_OUTPUT_PATH = "generated_output.txt"
 
 # Get the API key from the environment variable
-github_key = os.getenv('github_token')
+# github_key = os.getenv('github_token')
+github_key =" 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"
 print(github_key)
 
 # Function to test environment variable loading
