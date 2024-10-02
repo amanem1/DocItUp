@@ -225,3 +225,15 @@ mindmap
       Technical Docs
       User Manuals
       API Docs
+graph TD
+    A[Start] --> B[Initiate Voice Collection]
+    B --> C[Use Mic to Capture Voice]
+    C --> D[Send Voice Data to App]
+    D --> E[App Processes Voice Data]
+    E --> F[Intent Analysis]
+    F --> G{Intent Recognized?}
+    G -->|Yes| H[Generate Notification]
+    G -->|No| I[Ask for Clarification]
+    H --> J[Send Notification to User]
+    I --> B
+    J --> K[End]
