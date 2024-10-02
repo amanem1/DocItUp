@@ -279,7 +279,7 @@ def main():
                 existing_data, file_sha = read_github_file()
                 existing_output_data , output_file_sha = read_github_output_file()
 
-                updated_text = existing_data + f"\n{user_input} {role}" 
+                updated_text = existing_data + f"\n{user_input}" 
 
                 update_github_file(updated_text,file_sha)
                 
