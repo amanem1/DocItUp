@@ -121,10 +121,7 @@ def update_github_file(new_content, sha):
     }
 
     response = requests.put(url, headers=headers, json=data)
-    if response.status_code != 200:
-        None
-    else:
-        st.success(".")
+
 
 
 
