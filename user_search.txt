@@ -1,0 +1,4 @@
+User input:  Can you generate a flowchart that outlines the flow of unit tests or integration tests, including setup, execution, and tear-down phases? ,give only mermaid js code , dont write a word more than that.  
+User input:  Does the tool allow you to clearly visualize dependencies between different teams (e.g., development, marketing, QA) in the flowchart? ,give only mermaid js code , dont write a word more than that.  
+User input:  Does the tool allow you to clearly visualize dependencies between different teams (e.g., development, marketing, QA) in the flowchart? ,give only mermaid js code , dont write a word more than that.  
+User input:  Can you visualize an algorithm (e.g., a sorting algorithm or API workflow) with clear conditional branches and loops? ,give only mermaid js code , dont write a word more than that.  
