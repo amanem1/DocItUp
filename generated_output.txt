@@ -175,3 +175,53 @@ Updated flowchart code: flowchart TD
     G --> G2[Track Keywords Ranking]
     G --> G3[Analyze Traffic and Behavior]
     G --> G4[Adjust SEO Strategy Based on Data]
+
+mindmap
+  root((WhatsApp Clone Development))
+    Frontend Development
+      Web
+        Framework: React.js
+        State Management: Redux
+        UI Components: Material-UI
+      Mobile
+        iOS: Swift
+        Android: Kotlin
+        Cross-Platform: React Native
+    Backend Development
+      Server Framework: Node.js
+      Database: MongoDB
+      Realtime Messaging: Socket.io
+      REST API: Express.js
+    Authentication
+      User Registration
+      User Login
+      Two-Factor Authentication
+    Features
+      Messaging
+        Text Messages
+        Voice Messages
+        Media Sharing
+      Calling
+        Voice Calls
+        Video Calls
+    DevOps
+      CI/CD: Jenkins
+      Containerization: Docker
+      Monitoring: Prometheus
+      Cloud Provider: AWS
+    Security
+      Data Encryption
+      End-to-End Encryption
+      User Privacy
+    Testing
+      Unit Testing: Jest
+      Integration Testing: Mocha
+      End-to-End Testing: Cypress
+    UI/UX Design
+      Wireframing
+      Prototyping
+      User Research
+    Documentation
+      Technical Docs
+      User Manuals
+      API Docs
