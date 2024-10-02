@@ -279,7 +279,11 @@ def main():
                 existing_data, file_sha = read_github_file()
                 existing_output_data , output_file_sha = read_github_output_file()
 
-                updated_text = existing_data + f"\n{user_input}" 
+                if existing_data is None:
+                     updated_text = f"\n{user_input} {role}" 
+                else:
+
+                    updated_text = existing_data + f"\n{user_input} {role}" 
 
                 update_github_file(updated_text,file_sha)
                 
@@ -290,7 +294,10 @@ def main():
                 
                 if svg_content:
                     st.markdown(get_svg_download_link(svg_content), unsafe_allow_html=True)
-                    updated_output_text = existing_output_data +f"\n{code}"
+                    if existing_output_data is None:
+                        updated_output_text = f"\n{code}"
+                    else:
+                        updated_output_text = existing_output_data +f"\n{code}"
                     update_github_output_file(updated_output_text,output_file_sha)
                     
                 else:
