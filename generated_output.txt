@@ -256,3 +256,16 @@ graph TD
     D --> E[Move n-1 disks from Auxiliary to Destination]
     E --> F[Done]
     B -- No --> F
+flowchart TD
+    A[Start] --> B[Initialize Process Queue]
+    B --> C[Set Time Quantum]
+    C --> D[Evaluate if all processes are completed]
+    D -- No --> E[Pick the next process in the queue]
+    E --> F[Execute process for the time quantum or until completion]
+    F --> G[Check if the process is completed]
+    G -- Yes --> H[Remove process from queue]
+    G -- No --> I[Move process to the back of the queue]
+    H --> J[Update waiting and turnaround times]
+    I --> J
+    J --> D
+    D -- Yes --> K[End]
