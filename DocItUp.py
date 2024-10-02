@@ -31,22 +31,47 @@ updated_input_text = ""
 updated_output_text = ""
 
 ###############################
-# adding html instead of stmd.streamlit
+# adding html instead of stmd.streamlitHere's a version of your render_mermaid function that includes zooming with mouse scroll and dragging for panning:
 
 def render_mermaid(code):
     html = f"""
-    <div style="overflow-y: auto; height: 100%; width: 100%;">
-        <pre class="mermaid">
-        {code}
-        </pre>
+    <div id="mermaid-container" style="overflow: hidden; height: 100%; width: 100%;">
+        <div id="mermaid-content" style="transform-origin: 0 0;">
+            <pre class="mermaid">
+            {code}
+            </pre>
+        </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/panzoom/9.4.0/panzoom.min.js"></script>
     <script>
+    // Initialize Mermaid
     mermaid.initialize({{ startOnLoad: true }});
+
+    // Wait for the Mermaid to finish rendering, then apply panzoom
+    document.addEventListener("DOMContentLoaded", function() {{
+        const mermaidContent = document.getElementById('mermaid-content');
+        const panzoomInstance = panzoom(mermaidContent, {{
+            zoomDoubleClickSpeed: 1,
+            maxZoom: 4,
+            minZoom: 0.5,
+            bounds: true,
+            boundsPadding: 0.1
+        }});
+
+        // Allow zoom with scroll wheel
+        mermaidContent.addEventListener('wheel', function(event) {{
+            if (event.ctrlKey) {{
+                event.preventDefault();
+                const delta = event.deltaY > 0 ? -0.05 : 0.05;
+                panzoomInstance.zoomTo(mermaidContent.clientWidth / 2, mermaidContent.clientHeight / 2, delta);
+            }}
+        }});
+    }});
     </script>
     """
-    stmd.html(html, height=500, scrolling=True)
+    stmd.html(html, height=500, scrolling=False)
 
 
 
@@ -94,8 +119,12 @@ def update_github_file(new_content, sha):
         "content": base64.b64encode(new_content.encode('utf-8')).decode('utf-8'),
         "sha": sha
     }
-    
+
     response = requests.put(url, headers=headers, json=data)
+    if response.status_code != 200:
+        None
+    else:
+        st.success(".")
 
 
 
@@ -209,19 +238,22 @@ def main():
         pm_count = sum(any(option in response for option in [
             "Defining product features and roadmap",
             "Market analysis and user needs",
-            "Product management software (e.g., Jira, Trello)"
+            "Product management software (e.g., Jira, Trello)",
+            "Work with cross functional teams"
         ]) for response in st.session_state.responses)
         
         sle_count = sum(any(option in response for option in [
             "Architecting software solutions and managing technical teams",
             "Technical feasibility and resource allocation",
-            "Project management and team collaboration tools"
+            "Project management and team collaboration tools",
+            "Work with software team members mostly "
         ]) for response in st.session_state.responses)
         
         se_count = sum(any(option in response for option in [
             "Writing and debugging code",
             "Implementation details and coding challenges",
-            "Integrated Development Environment (IDE)"
+            "Integrated Development Environment (IDE)",
+            "Work with members within software team "
         ]) for response in st.session_state.responses)
         
         if pm_count >= sle_count and pm_count >= se_count:
@@ -278,6 +310,8 @@ def main():
                 st.code(code, language='mermaid')
                 existing_data, file_sha = read_github_file()
                 existing_output_data , output_file_sha = read_github_output_file()
+                print(existing_data)
+                print(existing_output_data)
 
                 if existing_data is None:
                      updated_text = user_input 
