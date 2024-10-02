@@ -24,7 +24,7 @@ load_dotenv()
 
 github_key=os.getenv('github_token')
 
-
+prompt_user_input = "" # this is only for the prompt
 user_input = ""
 text_file = ""
 updated_input_text = ""
@@ -169,8 +169,10 @@ def get_svg_download_link(svg_content, filename="diagram.svg"):
 
 
 def main():
-    st.title("DocItUp ")
-    st.subheader("Answer the following questions to identify your role in the team\n can choose more than one option if performing multiple roles(pm,sle,sde)")
+    title = st.title("DocItUp:")
+    st.header("Instantly Transform Ideas into Flow Diagrams with Just One Prompt!")
+
+    st.subheader("Answer the following questions to identify your role in the team\n can choose more than one option if performing multiple roles\n (product manager,software lead ,software developer)")
 
 
     if not st.session_state.quiz_finished:
@@ -253,9 +255,10 @@ def main():
         st.markdown(f'<div class="highlight">{role}</div>', unsafe_allow_html=True)
         
         # Add text input for user feedback
-        st.write("Please give prompt for the flow diagram you want.")
+        st.write("Enter a prompt for the flow diagram.")
         user_input = st.text_area("Your input:", value=st.session_state.user_input, height=150)
-        user_input  = f" {user_input} ,give only mermaid js code , dont write a word more than that.  " 
+        
+        prompt_user_input = f" {user_input} ,give only mermaid js code , dont write a word more than that.  " 
         
         if st.button("Submit "):
             st.session_state.user_input = user_input
@@ -265,7 +268,7 @@ def main():
             
             # Process feedback and generate Mermaid diagram
             if user_input:
-                answer = get_response_from_gpt3(user_input,role,text_file)
+                answer = get_response_from_gpt3(prompt_user_input,role,text_file)
                 code = clean_mermaid_code(answer)
                 st.subheader("Generated  Diagram:")
                 # mermaid_chart = stmd.st_mermaid(code, height=400)
@@ -276,7 +279,7 @@ def main():
                 existing_data, file_sha = read_github_file()
                 existing_output_data , output_file_sha = read_github_output_file()
 
-                updated_text = existing_data + f"\n{user_input}"
+                updated_text = existing_data + f"\n{user_input} {role}" 
 
                 update_github_file(updated_text,file_sha)
                 
