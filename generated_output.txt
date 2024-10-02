@@ -248,3 +248,11 @@ flowchart TD
     H --> I[Establish Performance Metrics and Reporting]
     I --> J[Launch Customer Care Team]
     J --> K[Monitor and Improve]
+graph TD
+    A[Start]
+    A --> B[Is n > 0?]
+    B -- Yes --> C[Move n-1 disks from Source to Auxiliary]
+    C --> D[Move nth disk from Source to Destination]
+    D --> E[Move n-1 disks from Auxiliary to Destination]
+    E --> F[Done]
+    B -- No --> F
