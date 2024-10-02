@@ -418,7 +418,7 @@ def test_read_github_file():
         return sha,content
     else:
         st.error(f"Failed to read file. Status Code: {response.status_code}, Message: {response.text}")
-        return None
+        return None,None
 
 # Function to update the file in GitHub
 def test_update_github_file(new_content, sha):
@@ -471,7 +471,6 @@ def main():
     # Update the GitHub file if SHA is retrieved successfully
     if sha:
         new_content = st.text_area("Enter new content to update GitHub file:", value="This is test content.")
-        new_content = data + f"\n {new_content}"
         if st.button("Update File"):
             test_update_github_file(new_content, sha)
 
