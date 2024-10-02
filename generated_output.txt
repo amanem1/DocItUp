@@ -269,3 +269,15 @@ flowchart TD
     I --> J
     J --> D
     D -- Yes --> K[End]
+flowchart TD
+    A[Start] --> B[Input: Folder Path, File Name]
+    B --> C[Open Folder]
+    C --> D{Is Folder Accessible?}
+    D -- No --> E[Error: Folder Not Accessible]
+    E --> F[End]
+    D -- Yes --> G[Read Files in Folder]
+    G --> H{File Found?}
+    H -- No --> I[Move to Next File/Folder]
+    I --> G
+    H -- Yes --> J[Output: File Path]
+    J --> F[End]
