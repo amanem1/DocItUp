@@ -327,3 +327,22 @@ flowchart TD
     I --> E
     G --> J[End]
     D --> J
+flowchart TD
+    A[Start] --> B[Identify Requirements]
+    B --> C[Design System Architecture]
+    C --> D{Select Technologies}
+    D --> E1[Crawling Tool]
+    D --> E2[Knowledge Base]
+    D --> E3[Chatbot Framework]
+    E1 --> F[Implement Web Crawler]
+    F --> G[Extract Website Data]
+    G --> H[Process & Store in Knowledge Base]
+    H --> I[Design Chatbot Logic]
+    I --> J[Integrate Chatbot with Knowledge Base]
+    J --> K[Build Frontend Chat Agent]
+    K --> L[Embedding Code for Website]
+    L --> M[Test Integration]
+    M --> N{Successful?}
+    N -->|No| O[Debug & Iterate]
+    N -->|Yes| P[Deploy Chatbot]
+    P --> Q[End]
