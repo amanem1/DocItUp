@@ -2,3 +2,4 @@
  create mindmap to create a app similar to whatsapp ,give only mermaid js code , dont write a word more than that.  
 make flow diagram to make a product which collects voice using mic and sends to app and then app gives notification based on the intent of the voice .
 write a flow diagram to get setup customer care team. Product Manager
+draw  logic of tower of hanoi
