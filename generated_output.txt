@@ -281,3 +281,23 @@ flowchart TD
     I --> G
     H -- Yes --> J[Output: File Path]
     J --> F[End]
+flowchart TD
+    A[Market Research] --> B[Identify Objectives]
+    B --> C[Gather Data]
+    C --> D[Primary Research]
+    C --> E[Secondary Research]
+    D --> D1[Surveys]
+    D --> D2[Interviews]
+    D --> D3[Focus Groups]
+    E --> E1[Industry Reports]
+    E --> E2[Competitor Analysis]
+    E --> E3[Public Data]
+    D1 --> F[Analyze Data]
+    D2 --> F
+    D3 --> F
+    E1 --> F
+    E2 --> F
+    E3 --> F
+    F --> G[Identify Insights]
+    G --> H[Make Recommendations]
+    H --> I[Report Findings]
