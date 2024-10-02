@@ -314,3 +314,16 @@ graph TD
   J --> K[Generate SEO Report]
   K --> L[Review and Strategy Adjustment]
   L --> A
+flowchart TD
+    A[Start] --> B[Input Number n]
+    B --> C{n <= 1}
+    C -- Yes --> D[Not Prime]
+    C -- No --> E[Initialize i = 2]
+    E --> F{Is i*i <= n}
+    F -- No --> G[Prime]
+    F -- Yes --> H{n % i == 0}
+    H -- Yes --> D[Not Prime]
+    H -- No --> I[i = i + 1]
+    I --> E
+    G --> J[End]
+    D --> J
