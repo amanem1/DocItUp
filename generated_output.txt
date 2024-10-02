@@ -301,3 +301,16 @@ flowchart TD
     F --> G[Identify Insights]
     G --> H[Make Recommendations]
     H --> I[Report Findings]
+graph TD
+  A[Start] --> B[Keyword Research]
+  B --> C[Competitor Analysis]
+  C --> D[On-Page SEO Audit]
+  D --> E[Technical SEO Audit]
+  E --> F[Content Analysis]
+  F --> G[Backlink Analysis]
+  G --> H[Rank Tracking]
+  H --> I[Traffic Analysis]
+  I --> J[Conversion Analysis]
+  J --> K[Generate SEO Report]
+  K --> L[Review and Strategy Adjustment]
+  L --> A
