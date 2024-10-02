@@ -176,7 +176,7 @@ def main():
         st.markdown(f'<div class="highlight">{role}</div>', unsafe_allow_html=True)
         
         # Add text input for user feedback
-        st.write("Please provide any additional information ")
+        st.write("Please give prompt for the flow diagram you want.")
         user_input = st.text_area("Your input:", value=st.session_state.user_input, height=150)
         user_input  = f" {user_input} ,give only mermaid js code , dont write a word more than that.  " 
         
