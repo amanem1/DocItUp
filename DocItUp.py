@@ -92,8 +92,8 @@ def get_svg_download_link(svg_content, filename="diagram.svg"):
 
 
 def main():
-    st.title("Role Identification Quiz")
-    st.subheader("Answer the following questions to identify your role in the team\n can choose more than one option if performing multiple roles")
+    st.title("DocItUp ")
+    st.subheader("Answer the following questions to identify your role in the team\n can choose more than one option if performing multiple roles(pm,sle,sde)")
 
 
     if not st.session_state.quiz_finished:
@@ -194,7 +194,7 @@ def main():
                 # mermaid_chart = stmd.st_mermaid(code, height=400)
                 render_mermaid(code)
                 # showing code also now
-                st.subheader("Code:")
+                st.subheader("Code to attach in Draw.io (https://app.diagrams.net/) as mermaid extension")
                 st.code(code, language='mermaid')
                 save_to_file('user_search.txt', f"User input: {user_input}")
                 save_to_file('generated_output.txt', f"Updated flowchart code: {code}")
@@ -227,6 +227,18 @@ def main():
             st.session_state.quiz_finished = False
             st.session_state.user_input = ""
             st.rerun()
+    
+
+    st.markdown("<hr>", unsafe_allow_html=True)  # Optional line separator
+
+    st.markdown(
+    """
+    <div style='text-align: center;'>
+        Made by <strong>Amanem</strong> with ❤️ 
+    </div>
+    """, 
+    unsafe_allow_html=True
+)
 
 
 
