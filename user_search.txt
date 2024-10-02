@@ -1,8 +1,1 @@
-User input:  Can you generate a flowchart that outlines the flow of unit tests or integration tests, including setup, execution, and tear-down phases? ,give only mermaid js code , dont write a word more than that.  
-User input:  Does the tool allow you to clearly visualize dependencies between different teams (e.g., development, marketing, QA) in the flowchart? ,give only mermaid js code , dont write a word more than that.  
-User input:  Does the tool allow you to clearly visualize dependencies between different teams (e.g., development, marketing, QA) in the flowchart? ,give only mermaid js code , dont write a word more than that.  
-User input:  Can you visualize an algorithm (e.g., a sorting algorithm or API workflow) with clear conditional branches and loops? ,give only mermaid js code , dont write a word more than that.  
-User input:  Can you map out a technical workflow that shows the interaction between different software modules and services? ,give only mermaid js code , dont write a word more than that.  
-User input:  make a flow diagram to find market audience for a robotic company ,which sells drones . ,give only mermaid js code , dont write a word more than that.  
-User input:  give me a flow diagram for hiring a ui/ux designer  ,give only mermaid js code , dont write a word more than that.  
-User input:  create  a flow digital marketing seo optimization flow diagram for a business. ,give only mermaid js code , dont write a word more than that.  
+ create mindmap to show mvp to production stage of an app to investors ,give only mermaid js code , dont write a word more than that.  
