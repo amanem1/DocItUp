@@ -71,7 +71,7 @@ def render_mermaid(code):
     }});
     </script>
     """
-    stmd.html(html, height=500, scrolling=False)
+    stmd.html(html, height=500, scrolling=True)
 
 
 
