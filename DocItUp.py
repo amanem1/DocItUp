@@ -1,15 +1,35 @@
-import streamlit_mermaid as stmd
+# import streamlit_mermaid as stmd
 import streamlit as st
 import base64
 from io import BytesIO
 import requests
 from question_session import questions
 from openai_data import get_response_from_gpt3,correct_mermaid_code
+import streamlit.components.v1 as stmd
 
 user_input = ""
 text_file = ""
 
 ###############################
+# adding html instead of stmd.streamlit
+
+def render_mermaid(code):
+    html = f"""
+    <div style="overflow-y: auto; height: 100%; width: 100%;">
+        <pre class="mermaid">
+        {code}
+        </pre>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>
+    mermaid.initialize({{ startOnLoad: true }});
+    </script>
+    """
+    stmd.html(html, height=500, scrolling=True)
+###############################
+
+
 
 #states available
 if 'current_question' not in st.session_state:
@@ -25,6 +45,11 @@ if 'user_input' not in st.session_state:
 inputs =[]
 
 
+
+
+def save_to_file(filename, content):
+    with open(filename, 'a') as file:
+        file.write(content + '\n')
 
 
 def clean_mermaid_code(code_block):
@@ -58,6 +83,8 @@ def get_svg_download_link(svg_content, filename="diagram.svg"):
 
 def main():
     st.title("Role Identification Quiz")
+    st.subheader("Answer the following questions to identify your role in the team\n can choose more than one option if performing multiple roles")
+
 
     if not st.session_state.quiz_finished:
         current_q = questions[st.session_state.current_question]
@@ -152,13 +179,15 @@ def main():
             # Process feedback and generate Mermaid diagram
             if user_input:
                 answer = get_response_from_gpt3(user_input,role,text_file)
-                print(role, answer,user_input,text_file)
                 code = clean_mermaid_code(answer)
                 st.subheader("Generated  Diagram:")
-                mermaid_chart = stmd.st_mermaid(code, height=400)
+                # mermaid_chart = stmd.st_mermaid(code, height=400)
+                render_mermaid(code)
                 # showing code also now
                 st.subheader("Code:")
                 st.code(code, language='mermaid')
+                save_to_file('user_search.txt', f"User input: {user_input}")
+                save_to_file('generated_output.txt', f"Updated flowchart code: {code}")
 
                 
                 # Get the SVG content
@@ -166,13 +195,16 @@ def main():
                 
                 if svg_content:
                     st.markdown(get_svg_download_link(svg_content), unsafe_allow_html=True)
+                    
                 else:
                     # having a way to again retry the code and fix syntax issues  if any .
                     updated_code = correct_mermaid_code(code)
-                    mermaid_chart = stmd.st_mermaid(updated_code , height = 400)
+                    # mermaid_chart = stmd.st_mermaid(updated_code , height = 400)
+                    render_mermaid(updated_code)
                     svg_content =  mermaid_to_svg(updated_code)
                     st.subheader("updated Code:")
                     st.code(code, language='mermaid')
+                    save_to_file('generated_output.txt', f"Updated flowchart code: {updated_code}")
 
                     st.error("Failed to generate SVG. Please try again.")
 

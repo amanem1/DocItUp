@@ -1,0 +1,77 @@
+Updated flowchart code: graph TD
+    A[Start] --> B[Setup Phase]
+    B --> B1[Initialize Test Environment]
+    B1 --> B2[Load Test Data]
+    B2 --> B3[Mock External Services]
+
+    B3 --> C[Execution Phase]
+    C --> C1[Run Unit Tests]
+    C1 --> C2[Run Integration Tests]
+
+    C2 --> D[Tear-down Phase]
+    D --> D1[Clean Up Test Data]
+    D1 --> D2[Restore Environment]
+    D2 --> E[End]
+Updated flowchart code: flowchart TD
+    A[Product Development Process]
+    
+    subgraph Development Team
+        B1[Requirements Gathering]
+        B2[Design]
+        B3[Implementation]
+        B4[Unit Testing]
+    end
+    
+    subgraph QA Team
+        C1[Test Planning]
+        C2[Test Case Design]
+        C3[Test Execution]
+        C4[Defect Reporting]
+    end
+    
+    subgraph Marketing Team
+        D1[Market Research]
+        D2[Campaign Planning]
+        D3[Content Creation]
+        D4[Campaign Execution]
+    end
+
+    A --> B1
+    A --> C1
+    A --> D1
+
+    B1 --> B2
+    B2 --> B3
+    B3 --> B4
+    B4 --> |Code Handoff| C2
+    
+    C2 --> C3
+    C3 --> C4
+    C4 --> |Defect Fixes| B3
+
+    B2 <--> D2
+    B3 --> D3
+    D3 --> D4
+Updated flowchart code: graph TD
+    A[Project Start] -->|Requirements| B[Development Team]
+    A -->|Market Research| C[Marketing Team]
+    A -->|Test Planning| D[QA Team]
+    
+    B -->|Develop Features| E[QA Team]
+    B -->|Create Marketing Material| C
+    
+    C -->|Provide Feedback| E[QA Team]
+    
+    D -->|Continuous Testing| B
+    D -->|Report Bugs| B
+    
+    E -->|Sign-off| F[Project End]
+    C -->|Campaign Execution| F
+Updated flowchart code: flowchart TD
+    A[Start] --> B[Initialize variables]
+    B --> C{Is array unsorted?}
+    C -- Yes --> D[Find the minimum element]
+    D --> E[Swap with the first unsorted element]
+    E --> F[Mark first element as sorted]
+    F --> C
+    C -- No --> G[End]
