@@ -346,3 +346,13 @@ flowchart TD
     N -->|No| O[Debug & Iterate]
     N -->|Yes| P[Deploy Chatbot]
     P --> Q[End]
+flowchart TD
+    A[Research and Planning] --> B[Component Selection]
+    B --> C[Frame Design]
+    C --> D[Electronics Integration]
+    D --> E[Software Development]
+    E --> F[Assembly]
+    F --> G[Initial Testing]
+    G --> H[Flight Tuning]
+    H --> I[Final Testing]
+    I --> J[Deployment and Use]
