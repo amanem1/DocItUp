@@ -375,3 +375,32 @@ flowchart TD
     P --> Q[Launch App]
     Q --> R[Collect Post-Launch Feedback]
     R --> S[Plan Updates and Improvements]
+```mermaid
+flowchart TD
+    A[Start Program] --> B[Define Constants and Variables]
+    B --> C[Initialize insamp Buffer with firFixedInit()]
+    C --> D[Open input.pcm File for Reading]
+    D --> E{Check if File Opening was Successful}
+    E -- No --> F[Print Error and Exit]
+    E -- Yes --> G[Open outputFixed.pcm for Writing]
+    G --> H{Check File Opening}
+    H -- No --> I[Print Error and Exit]
+    H -- Yes --> J[Open outputFixedMa.pcm for Writing]
+    J --> K{Check File Opening}
+    K -- No --> L[Print Error and Exit]
+    K -- Yes --> M[Start Processing Samples]
+    M --> N[Read Samples from input.pcm File]
+    N --> O{Check if Samples Read > 0}
+    O -- No --> P[End Processing Samples]
+    O -- Yes --> Q[Store New Samples in Buffer using firStoreNewSamples()]
+    Q --> R[Apply firFixed with Bandpass Filter Coefficients]
+    R --> S[Write Output to outputFixed.pcm]
+    S --> T[Apply firFixed with Moving Average Filter Coefficients]
+    T --> U[Write Output to outputFixedMa.pcm]
+    U --> V[Move Processed Samples with firMoveProcSamples()]
+    V --> N
+    P --> W[Close input.pcm File]
+    W --> X[Close outputFixed.pcm File]
+    X --> Y[Close outputFixedMa.pcm File]
+    Y --> Z[End Program]
+```
