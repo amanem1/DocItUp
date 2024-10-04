@@ -404,3 +404,25 @@ flowchart TD
     X --> Y[Close outputFixedMa.pcm File]
     Y --> Z[End Program]
 ```
+graph TD
+    A[NestJS Application Structure] --> B[Modules]
+    A --> C[Controllers]
+    A --> D[Providers]
+    A --> E[Middlewares]
+
+    B --> B1[App Module]
+    B --> B2[User Module]
+    B --> B3[Auth Module]
+
+    C --> C1[App Controller]
+    C --> C2[User Controller]
+    C --> C3[Auth Controller]
+
+    D --> D1[App Service]
+    D --> D2[User Service]
+    D --> D3[Auth Service]
+    D --> D4[Custom Providers]
+
+    E --> E1[Logging Middleware]
+    E --> E2[Validation Middleware]
+    E --> E3[Authentication Middleware]
