@@ -453,3 +453,26 @@ graph TD
     D2 --> K2[Product Resolver]
 
     A --> L[Pipes]
+flowchart TD
+    A[NestJS Project Structure] --> B[Modules]
+    A --> C[Controllers]
+    A --> D[Providers]
+    A --> E[Services]
+
+    B --> B1[App Module]
+    B --> B2[User Module]
+    B --> B3[Auth Module]
+    
+    C --> C1[App Controller]
+    C --> C2[User Controller]
+    C --> C3[Auth Controller]
+    
+    D --> D1[App Provider]
+    D --> D2[User Provider]
+    D --> D3[Auth Provider]
+    
+    E --> E1[User Service]
+    E --> E2[Auth Service]
+    
+    E1 --> F[UserRepository]
+    E2 --> G[JwtStrategy]
