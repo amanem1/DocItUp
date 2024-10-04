@@ -337,3 +337,5 @@ write a code for nestjs smaple project Product Manager
 create a native js app for transferring recipes to a hardware induction board in flowchart Software Lead Engineer
 what is the process to apply for a patent. explain the initial stages in greater detail
  Product Manager
+what is the process to apply for a patent. explain the initial stages in greater detail
+ Product Manager
