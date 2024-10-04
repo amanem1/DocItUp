@@ -476,3 +476,18 @@ flowchart TD
     
     E1 --> F[UserRepository]
     E2 --> G[JwtStrategy]
+flowchart TD
+    A[User Inputs Recipe in App]
+    B[Parse Recipe Data]
+    C[Select Induction Board]
+    D[Connect to Board via Bluetooth]
+    E[Transfer Recipe Data]
+    F[Store Recipe on Board]
+    G[Confirm Transfer]
+
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    E --> F
+    F --> G
