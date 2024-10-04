@@ -523,3 +523,27 @@ flowchart TD
         sub8 --> sub9
         sub9 --> sub10
     end
+flowchart TD
+    A[Invent a New Idea] --> B[Document the Idea]
+    B --> C[Conduct Patent Search]
+    C --> D[Evaluate Patentability]
+    D --> E[Prepare Patent Application]
+    subgraph Initial Stages
+        A --> B
+        B --> C
+        C --> D
+    end
+    B1[Detailed Description]
+    B2[Drawings and Diagrams]
+    B3[Idea's Use and Benefit]
+    B --> B1
+    B --> B2
+    B --> B3
+    C1[Search Existing Patents]
+    C2[Identify Similar Patents]
+    C --> C1
+    C --> C2
+    D1[Novelty Requirement]
+    D2[Non-obviousness Requirement]
+    D1 --> D
+    D2 --> D
