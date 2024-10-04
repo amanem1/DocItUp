@@ -426,3 +426,30 @@ graph TD
     E --> E1[Logging Middleware]
     E --> E2[Validation Middleware]
     E --> E3[Authentication Middleware]
+graph TD
+    A[NestJS Application] --> B[Modules]
+    B --> C[App Module]
+    B --> D[Feature Modules]
+    D --> D1[User Module]
+    D --> D2[Product Module]
+
+    C --> E[Controllers]
+    E --> E1[App Controller]
+    D1 --> E2[User Controller]
+    D2 --> E3[Product Controller]
+
+    C --> F[Providers]
+    F --> F1[App Service]
+    D1 --> F2[User Service]
+    D2 --> F3[Product Service]
+
+    A --> G[Middleware]
+    A --> H[Interceptors]
+    A --> I[Guards]
+    A --> J[Filters]
+
+    A --> K[Resolvers]
+    D1 --> K1[User Resolver]
+    D2 --> K2[Product Resolver]
+
+    A --> L[Pipes]
