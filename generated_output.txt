@@ -547,3 +547,24 @@ flowchart TD
     D2[Non-obviousness Requirement]
     D1 --> D
     D2 --> D
+flowchart TD
+    A[Initial Idea] --> B[Conduct Patent Search]
+    B --> C[Document the Invention]
+    C --> D[Determine Type of Patent]
+    D --> E[Prepare Patent Application]
+
+    B --> B1[Search Existing Patents]
+    B1 --> B2[Evaluate Novelty and Uniqueness]
+
+    C --> C1[Provide Detailed Description]
+    C1 --> C2[Include Diagrams and Illustrations]
+
+    D --> D1[Utility Patent]
+    D --> D2[Design Patent]
+    D --> D3[Plant Patent]
+
+    E --> E1[Write Claims]
+    E1 --> E2[Define Scope of Protection]
+
+    E2 --> F[File Patent Application]
+    F --> G[Patent Examination Process]
