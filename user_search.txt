@@ -331,3 +331,4 @@ int main( void )
     fclose( out_fid2 );
  
    explain this code in a flowchart Software Engineer
+write a code for nestjs smaple project Product Manager
