@@ -491,3 +491,35 @@ flowchart TD
     D --> E
     E --> F
     F --> G
+flowchart TD
+    A[Research and Idea] --> B[Document Invention]
+    B --> C[Patent Search]
+    C --> D[Determine Patentability]
+    D --> E[Draft Patent Application]
+    E --> F[File Application with USPTO]
+
+    subgraph "Detail: Document Invention"
+        sub1[Detailed Description]
+        sub2[Drawings and Diagrams]
+        sub3[Working Models]
+        sub4[Possible Variations]
+        sub1 --> sub2
+        sub1 --> sub3
+        sub1 --> sub4
+    end
+
+    subgraph "Detail: Patent Search"
+        sub5[Database Search]
+        sub6[Similar Inventions Review]
+        sub7[Patent Classification]
+        sub5 --> sub6
+        sub6 --> sub7
+    end
+
+    subgraph "Detail: Determine Patentability"
+        sub8[Novelty Check]
+        sub9[Non-Obviousness]
+        sub10[Useful Application]
+        sub8 --> sub9
+        sub9 --> sub10
+    end
