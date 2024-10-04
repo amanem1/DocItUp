@@ -568,3 +568,19 @@ flowchart TD
 
     E2 --> F[File Patent Application]
     F --> G[Patent Examination Process]
+flowchart TD
+    A[Idea Conception] --> B[Perform Patent Search]
+    B --> C[Evaluate Patentability]
+    C --> D[Draft Patent Application]
+    D --> E[File Patent Application]
+    
+    B --> B1[Search Existing Patents and Publications]
+    B1 --> B2[Use Patent Databases and Search Tools]
+    
+    C --> C1[Assess Novelty]
+    C1 --> C2[Assess Non-Obviousness]
+    C2 --> C3[Consider Industrial Applicability]
+    
+    D --> D1[Create Detailed Description]
+    D1 --> D2[Include Claims]
+    D2 --> D3[Add Drawings if Necessary]
