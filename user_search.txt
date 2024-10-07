@@ -350,3 +350,5 @@ Create a reporting, reviewing, rectifying and refund flow for a platform where r
 give a flowchart for sorting an array algo  Software Engineer
 Create a high level architecture to make a python based desktop software for recording screen.
  Software Lead Engineer
+an ai app which converts text to podcasts
+ Product Manager
