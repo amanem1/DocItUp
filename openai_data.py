@@ -12,7 +12,7 @@ load_dotenv()
 
 # Get the api key from the environment  variable
 
-openai.api_key=os.getenv('api_key')
+openai.api_key="sk-9kPn7jHNdQACD-uqHAQFPUPhdF3V7cqPrjMzv4MRQGT3BlbkFJMyXaBKddJPODXGH57Q39IfHAly03gSuNcQrBIFaXYA"
 
 
 
