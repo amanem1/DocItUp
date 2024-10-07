@@ -620,3 +620,14 @@ flowchart TD
     H --> C
     D -->|Yes| I[Array is sorted]
     I --> J[End]
+flowchart TD
+    A[User Interface] -->|Input| B[Controller]
+    B -->|Start Recording| C[Screen Capture Module]
+    B -->|Stop Recording| C
+    C --> D[Encoder]
+    D --> E[File Writer]
+    E -->|Output File| F[(Storage)]
+    F -->|Retrieve| G[Player Module]
+    G -->|View| A
+    B --> H(Logger)
+    H --> F
