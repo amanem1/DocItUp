@@ -22,7 +22,7 @@ load_dotenv()
 
 # Get the api key from the environment  variable
 
-openai.api_key=os.getenv('api_key')
+github_key= " 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"
 
 prompt_user_input = "" # this is only for the prompt
 user_input = ""
