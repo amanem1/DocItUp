@@ -584,3 +584,18 @@ flowchart TD
     D --> D1[Create Detailed Description]
     D1 --> D2[Include Claims]
     D2 --> D3[Add Drawings if Necessary]
+flowchart TD
+    A[Start] --> B[Open App]
+    B --> C[User Authentication]
+    C --> D{Is User Authenticated?}
+    D -- Yes --> E[Initiate DB Collection]
+    D -- No --> F[Show Authentication Error]
+    E --> G[Connect to Database]
+    G --> H{Is Connection Successful?}
+    H -- Yes --> I[Fetch Data]
+    I --> J[Process Data]
+    J --> K[Display Data to User]
+    H -- No --> L[Show Connection Error]
+    F --> M[End]
+    K --> M
+    L --> M
