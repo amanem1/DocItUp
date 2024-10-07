@@ -631,3 +631,13 @@ flowchart TD
     G -->|View| A
     B --> H(Logger)
     H --> F
+graph TD
+    A[User Input Text] --> B[Text Analysis]
+    B --> C[Content Structuring]
+    C --> D[Voice Synthesis]
+    D --> E[Podcast Generation]
+    E --> F[User Review & Edit]
+    F --> G[Final Podcast Output]
+    G --> H[Distribution Platform]
+    H --> I[Share with Audience]
+    F -->|If Edits Needed| C
