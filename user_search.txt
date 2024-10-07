@@ -348,3 +348,5 @@ what is the process to apply for a patent. explain the initial stages in greater
 create flowchart for collecting db from app Software Engineer
 Create a reporting, reviewing, rectifying and refund flow for a platform where recipe creators can make sellable recipes but still edit them later. The flow should take into account that the creator has the option to fix a reported issue that violates the terms of service Software Lead Engineer
 give a flowchart for sorting an array algo  Software Engineer
+Create a high level architecture to make a python based desktop software for recording screen.
+ Software Lead Engineer
