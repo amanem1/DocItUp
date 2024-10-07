@@ -599,3 +599,12 @@ flowchart TD
     F --> M[End]
     K --> M
     L --> M
+graph TD
+    A[User Reports Issue] --> B[Review Report]
+    B --> |Invalid| C[Notify User]
+    B --> |Valid| D[Notify Creator]
+    D --> E[Creator Edits Recipe]
+    E --> F[Re-review Edited Recipe]
+    F --> |Compliance| G[Notify User & Close Report]
+    F --> |Non-compliance| H[Notify Creator of Violation]
+    H --> I[Refund Process Initiated]
