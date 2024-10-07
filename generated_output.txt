@@ -608,3 +608,15 @@ graph TD
     F --> |Compliance| G[Notify User & Close Report]
     F --> |Non-compliance| H[Notify Creator of Violation]
     H --> I[Refund Process Initiated]
+flowchart TD
+    A[Start] --> B[Initialize sorting algorithm]
+    B --> C[Repeat for each element]
+    C --> D{Is it the last element?}
+    D -->|No| E[Compare with adjacent element]
+    E --> F{Is in correct order?}
+    F -->|No| G[Swap elements]
+    F -->|Yes| H[Move to next element]
+    G --> H
+    H --> C
+    D -->|Yes| I[Array is sorted]
+    I --> J[End]
