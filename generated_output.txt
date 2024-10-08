@@ -714,3 +714,20 @@ flowchart TD
     H --> I[Make Adjustments if Needed]
     I --> J[Finalize Meal Plan]
     J --> K[End]
+flowchart TD
+    A[Start Meal Planning] --> B[Enter User Preferences]
+    B --> C{Choose Meal Types}
+    C -->|Breakfast| D[Enter Breakfast Preferences]
+    C -->|Lunch| E[Enter Lunch Preferences]
+    C -->|Snacks| F[Enter Snack Preferences]
+    C -->|Dinner| G[Enter Dinner Preferences]
+    D --> H[Confirm Customization for Breakfast]
+    E --> I[Confirm Customization for Lunch]
+    F --> J[Confirm Customization for Snacks]
+    G --> K[Confirm Customization for Dinner]
+    H --> L[Generate Meal Plan]
+    I --> L
+    J --> L
+    K --> L
+    L --> M[View Customized Meal Plan for the Week]
+    M --> N[End]
