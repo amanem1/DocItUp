@@ -661,3 +661,30 @@ flowchart TD
     
     I --> Z[Weekly Meal Plan Complete]
     J --> Z[Weekly Meal Plan Complete]
+flowchart TD
+    A[Start: Meal Planning App] --> B[User Input]
+    
+    B --> C[Meal Preferences]
+    B --> D[Dietary Restrictions]
+    B --> E[Calorie Goals]
+    
+    C --> C1[Choose Meal Types]
+    C1 --> C2[Select Breakfast Options]
+    C1 --> C3[Select Lunch Options]
+    C1 --> C4[Select Snacks Options]
+    C1 --> C5[Select Dinner Options]
+    
+    D --> D1[Specify Allergies]
+    D --> D2[Indicate Dietary Preferences]
+    
+    E --> E1[Set Daily Calorie Target]
+    
+    C2 & C3 & C4 & C5 --> F[Customization Complete]
+    
+    F --> G[Generate Meal Plan]
+    
+    G --> H{Customization Needed?}
+    H -->|Yes| C1
+    H -->|No| I[Display Weekly Meal Plan]
+    
+    I --> J[End]
