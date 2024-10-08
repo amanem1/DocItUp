@@ -353,3 +353,4 @@ Create a high level architecture to make a python based desktop software for rec
 an ai app which converts text to podcasts
  Product Manager
 There is a function and it initializes multiple values for a structure , i want to use multiple values in another c file , how do i call these structure values . Software Engineer
+Create a meal planning app where as a user I have put give minimal inputs to generate a full mealplan for the entire week. Give the users options to customize the types of meals within Product Manager
