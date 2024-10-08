@@ -646,3 +646,18 @@ flowchart TD
     B --> C[Use 'extern' to Declare Structure Variable]
     C --> D[Include Header File in C File]
     D --> E[Access Structure in C File]
+flowchart TD
+    A[User Minimal Input] --> B[Select Dietary Preferences]
+    B --> C[Choose Number of Meals per Day]
+    C --> D[Generate Meal Plan]
+    
+    D --> E[View Custom Meal Plan]
+    E --> F[Customize Meal Types]
+    F --> G[Modify based on Allergies]
+    F --> H[Include/Exclude Specific Ingredients]
+    
+    E --> I[Download/Print Meal Plan]
+    E --> J[Save Meal Plan]
+    
+    I --> Z[Weekly Meal Plan Complete]
+    J --> Z[Weekly Meal Plan Complete]
