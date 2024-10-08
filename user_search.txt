@@ -352,3 +352,4 @@ Create a high level architecture to make a python based desktop software for rec
  Software Lead Engineer
 an ai app which converts text to podcasts
  Product Manager
+There is a function and it initializes multiple values for a structure , i want to use multiple values in another c file , how do i call these structure values . Software Engineer
