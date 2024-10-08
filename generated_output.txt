@@ -742,3 +742,10 @@ flowchart TD
     G --> H[Push changes to remote]
     H --> I[git push origin branch-b]
 ```
+graph TD
+    A[Checkout Branch B] --> B[Merge Branch A into B]
+    B --> C[Push Changes to Remote]
+    
+    A -->|Command| D[git checkout branch-b]
+    B -->|Command| E[git merge branch-a]
+    C -->|Command| F[git push origin branch-b]
