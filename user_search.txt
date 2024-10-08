@@ -359,3 +359,4 @@ Create a meal planning app where as a user I have put give minimal inputs to gen
 Create a meal planning app where as a user I have put give minimal inputs to generate a full meal plan for the entire week. Give the users options to customize the types of meals within. The meals are already set as breakfast , lunch, snacks and dinner. The customization should be done before the meal plan is generated. Ensure to generate the inputs given at the start.  Software Lead Engineer
 i have  a branch a and branch b i want to push branch  a changes in branch b , give git commands for that Software Engineer
 i have  a branch a and branch b i want to push branch  a changes in branch b , give git commands for that Software Engineer
+i have  a branch a and branch b i want to push branch  a changes in branch b , give git commands for that Software Engineer
