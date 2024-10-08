@@ -731,3 +731,14 @@ flowchart TD
     K --> L
     L --> M[View Customized Meal Plan for the Week]
     M --> N[End]
+```mermaid
+flowchart TD
+    A[Checkout to branch B] --> B[git checkout branch-b]
+    B --> C[Merge branch A into branch B]
+    C --> D[git merge branch-a]
+    D --> E[Resolve any merge conflicts]
+    E --> F[Commit the merge]
+    F --> G[git commit -m "Merge branch-a into branch-b"]
+    G --> H[Push changes to remote]
+    H --> I[git push origin branch-b]
+```
