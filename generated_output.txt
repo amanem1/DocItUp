@@ -641,3 +641,8 @@ graph TD
     G --> H[Distribution Platform]
     H --> I[Share with Audience]
     F -->|If Edits Needed| C
+flowchart TD
+    A[Define Structure in Header File] --> B[Declare Structure in Header File]
+    B --> C[Use 'extern' to Declare Structure Variable]
+    C --> D[Include Header File in C File]
+    D --> E[Access Structure in C File]
