@@ -688,3 +688,29 @@ flowchart TD
     H -->|No| I[Display Weekly Meal Plan]
     
     I --> J[End]
+flowchart TD
+    A[Start]
+    A --> B[Input Preferences]
+    B --> C[Select Meal Type]
+    C --> D[Choose Dietary Preferences]
+    D --> E[Specify Calorie Range]
+    E --> F[Additional Customizations]
+    F --> G[Generate Meal Plan]
+    
+    subgraph Meal Type Selection
+        C --> C1[Breakfast]
+        C --> C2[Lunch]
+        C --> C3[Snacks]
+        C --> C4[Dinner]
+    end
+    
+    subgraph Customizations
+        F --> F1[Exclude Ingredients]
+        F --> F2[Favorites Cuisine]
+        F --> F3[Allergy Information]
+    end
+
+    G --> H[Review Generated Meal Plan]
+    H --> I[Make Adjustments if Needed]
+    I --> J[Finalize Meal Plan]
+    J --> K[End]
