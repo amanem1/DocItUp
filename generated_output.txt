@@ -754,3 +754,8 @@ graph TD
     B --> C[Process/System]
     C --> D[Output]
     N[Noise] --> C
+graph TD
+    A[Input Variables] --> B[Sensing Unit]
+    B --> C[System Processing]
+    C --> D[Output]
+    E[Noise] --> B
