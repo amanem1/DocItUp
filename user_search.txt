@@ -362,3 +362,5 @@ i have  a branch a and branch b i want to push branch  a changes in branch b , g
 i have  a branch a and branch b i want to push branch  a changes in branch b , give git commands for that Software Engineer
 make a process/system diagram with input variables , noise ,sensing unit and output 
  Product Manager
+make a process/system diagram with input variables , noise ,sensing unit and output 
+ Product Manager
