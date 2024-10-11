@@ -759,3 +759,13 @@ graph TD
     B --> C[System Processing]
     C --> D[Output]
     E[Noise] --> B
+flowchart TD
+    A[Start] --> B[User Inputs Ingredients]
+    B --> C{Are Ingredients Valid?}
+    C -->|Yes| D[Suggest Recipes]
+    C -->|No| E[Request Valid Inputs]
+    D --> F{User Selects a Recipe?}
+    F -->|Yes| G[Display Recipe Steps]
+    F -->|No| H[End]
+    G --> I[User Follows and Rates Recipe]
+    I --> H
