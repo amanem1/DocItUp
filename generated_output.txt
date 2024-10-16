@@ -769,3 +769,21 @@ flowchart TD
     F -->|No| H[End]
     G --> I[User Follows and Rates Recipe]
     I --> H
+flowchart TD
+    A[Virtual Character Creation Flow] --> B[OpenAI API]
+    B --> C[Query Knowledge Base]
+    C --> D[Generate Response]
+    
+    A --> E[ElevenLabs API]
+    E --> F[Text-to-Speech Conversion]
+    F --> G[Generate Audio]
+
+    A --> H[Wave2Lip]
+    H --> I[Integrate Lip Movement with Audio]
+
+    A --> J[Talking Face]
+    J --> K[Render Character Animation]
+
+    D --> F
+    G --> I
+    I --> K
