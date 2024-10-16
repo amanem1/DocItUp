@@ -367,3 +367,5 @@ make a process/system diagram with input variables , noise ,sensing unit and out
 recipe creation tool Software Engineer
 I want to create a virtual character using openai api , elevenlabs api , wave2lip ,and talking face , give me flow diagram of how i can acheive , basically the character has knowledge base and voice api , it will talk like the person whose knowledge base is giving , it will also move the lip movement .
   Product Manager
+I want to create a virtual character using openai api , elevenlabs api , wave2lip ,and talking face , give me flow diagram of how i can acheive , basically the character has knowledge base and voice api , it will talk like the person whose knowledge base is giving , it will also move the lip movement .
+  Product Manager
