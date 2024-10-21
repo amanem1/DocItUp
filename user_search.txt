@@ -369,3 +369,5 @@ I want to create a virtual character using openai api , elevenlabs api , wave2li
   Product Manager
 I want to create a virtual character using openai api , elevenlabs api , wave2lip ,and talking face , give me flow diagram of how i can acheive , basically the character has knowledge base and voice api , it will talk like the person whose knowledge base is giving , it will also move the lip movement .
   Product Manager
+Provide a basic Bluetooth pairing flow for a device with two independent bluetooth connections.
+ Software Lead Engineer
