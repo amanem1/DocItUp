@@ -798,3 +798,17 @@ flowchart TD
     H --> I[Input Audio to Talking Face]
     I --> J[Generate Talking Face Video]
     J --> K[Virtual Character Output]
+graph TD
+    A[Start] --> B{Devices Bluetooth On?}
+    B -- No --> C[Turn on Bluetooth]
+    C --> B
+    B -- Yes --> D{First Connection Available?}
+    D -- No --> E[Scan for First Device]
+    E --> D
+    D -- Yes --> F[Pair First Device]
+    F --> G{Second Connection Available?}
+    G -- No --> H[Scan for Second Device]
+    H --> G
+    G -- Yes --> I[Pair Second Device]
+    I --> J[Connections Established]
+    J --> K[End]
