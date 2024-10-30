@@ -371,3 +371,6 @@ I want to create a virtual character using openai api , elevenlabs api , wave2li
   Product Manager
 Provide a basic Bluetooth pairing flow for a device with two independent bluetooth connections.
  Software Lead Engineer
+A user flow diagram of meal planning app split into 2 Stages. 
+Stage 1: The first time the user starts to meal plan. They are asked their food preferences, meal planning preferences and  goals. Once they put in all the info the meal plan is generated and the system suggest the entire meal plan. 
+Stage 2: is the second time they user tries to meal plan. They are simply asked whether they want to use the same info as last time and then can generate. If they want to change, they are prompted to choose which thing they want to change and can do so.  Product Manager
