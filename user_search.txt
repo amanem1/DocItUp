@@ -572,3 +572,4 @@ static void ResetReepCtrlParams(int32_t time)
 	reepFactor = ((log(0.6363634)) / ((-0.10*time*1000)));
 
 } Software Engineer
+i want a flow diagram for Fourier series Software Engineer
