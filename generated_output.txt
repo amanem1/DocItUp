@@ -866,3 +866,29 @@ flowchart TD
     A1 --> B1[Calculate reepFactor: log(0.6363634) / ((-0.10*time*1000))]
     end
 ```
+flowchart TD
+    A[Fourier Series] --> B[Function Representation]
+    B --> C[Periodic Function]
+    B --> D[Decomposition into Sinusoids]
+    
+    C --> C1[Function of Time]
+    C --> C2[Repeats at Intervals]
+    
+    D --> D1[Sum of Sines and Cosines]
+    D1 --> E[Sinusoids with Different Frequencies]
+    
+    E --> F[Fundamental Frequency]
+    E --> G[Harmonics]
+    
+    F --> F1[First Sinusoid]
+    
+    G --> G1[Integer Multiples of Fundamental]
+    
+    D --> H[Fourier Coefficients]
+    H --> H1[Amplitudes of Sinusoids]
+    H --> H2[Phase Angles]
+    
+    A --> I[Applications]
+    I --> I1[Signal Processing]
+    I --> I2[Image Compression]
+    I --> I3[Vibration Analysis]
