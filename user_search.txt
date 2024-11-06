@@ -473,3 +473,102 @@ static void ResetReepCtrlParams(int32_t time)
 	reepFactor = ((log(0.6363634)) / ((-0.10*time*1000)));
 
 } Software Engineer
+i need a flow diagram for a c code .
+
+static uint8_t ExecuteReepCtrl(vsl_type_t vesselType)
+{
+	static float powerLevel;
+	static uint32_t elapsedTime;
+	
+    // calculate elapsed time in simmer
+    elapsedTime = pdTICKS_TO_MS(xTaskGetTickCount() - simmerStartTime);
+
+	/* REEP (Runtime Estimated Exponential Power)
+	 * a = 11
+	 * c = 7
+	 * e = 2.718
+	 * 
+	 * Power Level = ((a * pow(e, (-Reep Factor * Elapsed Time))) + c)
+	 * Note: Power level needs to be truncated while returning
+	 */
+    powerLevel = ((11 * pow(e, (-reepFactor * elapsedTime))) + 7);
+
+	if(currentModeSet == HW_CTRL_SIMMER_MODE)
+	{
+		/*Based on vessel type filter the power level*/
+		if (vesselType == VESSEL_TYPE_SS)
+		{
+			/*Pre-request for stainless steel vessel*/
+			powerLevel = powerLevel - 1;
+
+			if (powerLevel > 9)
+			{
+				powerLevel = 9;
+			}
+			else if (powerLevel < 5)
+			{
+				powerLevel = 5;
+			}
+		}
+		else
+		{
+			if (powerLevel > 14)
+			{
+				powerLevel = 14;
+			}
+			else if (powerLevel < 7)
+			{
+				powerLevel = 7;
+			}
+		}
+	}
+	else if(currentModeSet == HW_CTRL_MILKSIMMER_MODE)
+	{
+		/*Based on vessel type filter the power level*/
+		if (vesselType == VESSEL_TYPE_SS)
+		{
+			/*Pre-request for SS vessel*/
+			powerLevel = powerLevel - 3;
+
+			if (powerLevel > 10)
+			{
+				powerLevel = 10;
+			}
+			else if (powerLevel < 4)
+			{
+				powerLevel = 4;
+			}
+		}
+		else
+		{
+			/*Pre-request for AL vessel*/
+			powerLevel = powerLevel - 2;
+
+			if (powerLevel > 12)
+			{
+				powerLevel = 12;
+			}
+			else if (powerLevel < 5)
+			{
+				powerLevel = 5;
+			}
+		}
+	}
+	return (uint8_t)powerLevel;
+}
+
+static void ResetReepCtrlParams(int32_t time)
+{
+	simmerStartTime = xTaskGetTickCount();
+
+	/* REEP (Runtime Estimated Exponential Power)
+	 * a = 11
+	 * c = 7
+	 * e = 2.718
+	 * b = 14
+	 * Reep Factor = ln((b-c)/a) / (-10% of time in ms)
+	 * (b-c)/a = 0.6363634
+	 */
+	reepFactor = ((log(0.6363634)) / ((-0.10*time*1000)));
+
+} Software Engineer
