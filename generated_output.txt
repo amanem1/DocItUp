@@ -829,3 +829,40 @@ flowchart TD
     E2 --> C2
     C2 --> F2[Suggest Updated Meal Plan]
   end
+```mermaid
+flowchart TD
+    A[ExecuteReepCtrl Function] --> B[Calculate elapsedTime]
+    B --> C[Calculate Power Level: ((11 * pow(e, (-reepFactor * elapsedTime))) + 7)]
+    C --> D{Is currentModeSet == HW_CTRL_SIMMER_MODE?}
+    
+    D -->|Yes| E{Is vesselType == VESSEL_TYPE_SS?}
+    E -->|Yes| F[powerLevel = powerLevel - 1]
+    F --> G{Is powerLevel > 9?}
+    G -->|Yes| H[powerLevel = 9]
+    G -->|No| I{Is powerLevel < 5?}
+    I -->|Yes| J[powerLevel = 5]
+    E -->|No| K{Is powerLevel > 14?}
+    K -->|Yes| L[powerLevel = 14]
+    K -->|No| M{Is powerLevel < 7?}
+    M -->|Yes| N[powerLevel = 7]
+
+    D -->|No| O{Is currentModeSet == HW_CTRL_MILKSIMMER_MODE?}
+    O -->|Yes| P{Is vesselType == VESSEL_TYPE_SS?}
+    P -->|Yes| Q[powerLevel = powerLevel - 3]
+    Q --> R{Is powerLevel > 10?}
+    R -->|Yes| S[powerLevel = 10]
+    R -->|No| T{Is powerLevel < 4?}
+    T -->|Yes| U[powerLevel = 4]
+    P -->|No| V[powerLevel = powerLevel - 2]
+    V --> W{Is powerLevel > 12?}
+    W -->|Yes| X[powerLevel = 12]
+    W -->|No| Y{Is powerLevel < 5?}
+    Y -->|Yes| Z[powerLevel = 5]
+
+    AA[Return (uint8_t)powerLevel]
+
+    subgraph ResetReepCtrlParams Function
+    A1[Call xTaskGetTickCount for simmerStartTime]
+    A1 --> B1[Calculate reepFactor: log(0.6363634) / ((-0.10*time*1000))]
+    end
+```
