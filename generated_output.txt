@@ -910,3 +910,10 @@ flowchart TD
     D --> E{Receive User Command?}
     E -->|Yes| F[Move to Next Step]
     F --> G[End]
+flowchart TD
+    A[Start] --> B[Add Step in Cooking Section]
+    B --> C[Set Vessel Temperature to Current Temperature]
+    C --> D{User Command?}
+    D -->|Proceed| E[Next Step]
+    D -->|Stay| C
+    E --> F[End]
