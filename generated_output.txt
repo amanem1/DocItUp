@@ -976,3 +976,12 @@ flowchart TD
     K --> L
     
     L --> M[End]
+flowchart TD
+    A[Preheat] --> |Oil not Butter/Ghee| B[Oil Smoking Step]
+    A --> |Butter/Ghee Used| C[Direct to Spice Tempering]
+    B --> C[Spice Tempering]
+    C --> D{Spice Tempering Control}
+    D --> |Temperature-based| E[Set Temp to Current Temp + 20]
+    D --> |Time-based| F[Run Timer for 30 seconds]
+    E --> G[Complete Tempering]
+    F --> G[Complete Tempering]
