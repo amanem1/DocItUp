@@ -1006,3 +1006,25 @@ flowchart TD
     N --> O
     
     O --> P[End Saute Mode]
+flowchart TD
+    A[Start Sauté Mode]
+    B[Calculate Setpoint Temperature] 
+    B -->|Current Temp + 20°C| C[Phase 1: 80% Total Time]
+    C --> D{Vessel Type?}
+    
+    D -->|Aluminum| E[Power Level 7/10]
+    D -->|Stainless Steel| F[Power Level 6/10]
+    
+    E --> G[Run on Power Mode]
+    F --> G
+    
+    G --> H[Calculate Phase 2 Target Temperature]
+    H -->|Current Temp + 20°C| I[Phase 2: 20% Total Time]
+    
+    I --> J{Reaches Target Temperature Before Time?}
+    J -->|Yes| K[Implement Temperature Control Logic]
+    
+    J -->|No| L[Continue Until 20% Time]
+    
+    K --> M[End of Sauté Mode]
+    L --> M
