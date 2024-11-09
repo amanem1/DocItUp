@@ -943,3 +943,16 @@ flowchart TD
     H --> I
     D --> I
     I --> J[End]
+flowchart TD
+    A[Start] --> B[Preheat]
+    B --> C[Add Ingredient]
+    C --> D{Is Ingredient Butter/Ghee?}
+    D -- Yes --> E[Skip Oil Smoking]
+    D -- No --> F[Oil Smoking]
+    F --> G{Control Method}
+    G -- Temperature Based --> H[Set Temp: Current Temp + 20]
+    G -- Time Based --> I[Set Time: 30 Seconds]
+    H --> J[Continue Cooking]
+    I --> J
+    E --> J
+    J --> K[End]
