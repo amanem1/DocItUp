@@ -573,3 +573,4 @@ static void ResetReepCtrlParams(int32_t time)
 
 } Software Engineer
 i want a flow diagram for Fourier series Software Engineer
+Create  a flow chart  for preheat section of cooking session which is temperature control , it lets vessel go to the temperature of the water so to evaporate the water in the vessel before cooking.  Software Engineer
