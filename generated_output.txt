@@ -931,3 +931,15 @@ flowchart TD
     I --> K[Continue Cooking]
     E --> K
     K --> L[End]
+flowchart TD
+    A[Start] --> B[Preheat]
+    B --> C{Oil Type}
+    C -->|Butter/Ghee| D[Skip Oil Smoking]
+    C -->|Other| E[Add Ingredients]
+    E --> F{Time or Temperature Control}
+    F -->|Temperature| G[Temperature Set Point = Current + 20]
+    F -->|Time| H[Smoking for 30 sec]
+    G --> I[Oil Smoking Complete]
+    H --> I
+    D --> I
+    I --> J[End]
