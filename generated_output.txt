@@ -1052,3 +1052,24 @@ flowchart TD
     M --> O[Phase 2 Completion]
     N --> O
     O --> P[End]
+flowchart TD
+    A[Start Sauté Mode]
+    A --> B[Set Setpoint Temperature: Current Temp + 20°C]
+    B --> C[Calculate Phase 1 Time: 80% of Total Time]
+    C --> D[Select Power Level]
+    D --> E[Power Mode Running - Phase 1]
+    
+    E --> F{Phase 1 Complete?}
+    F -->|No| E
+    F -->|Yes| G[Calculate Phase 2 Target Temp: Phase 1 Temp + 20°C]
+
+    G --> H[Phase 2 Begins]
+    H --> I{Target Temp Reached?}
+    I -->|No| J{Phase 2 Complete?}
+    J -->|No| H
+    J -->|Yes| K[End Sauté Mode]
+    
+    I -->|Yes| L[Implement Temp Control Logic]
+    L --> M{Phase 2 Complete?}
+    M -->|No| L
+    M -->|Yes| K[End Sauté Mode]
