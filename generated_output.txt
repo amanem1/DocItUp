@@ -903,3 +903,10 @@ flowchart TD
     G -->|No| F
     G -->|Yes| H[Evaporate Water in Vessel]
     H --> I[Preheat Section Complete]
+flowchart TD
+    A[Start Cooking Section] --> B[Set Vessel Temperature]
+    B --> C{Completion Criteria?}
+    C -->|No| D[Wait for User Command]
+    D --> E{Receive User Command?}
+    E -->|Yes| F[Move to Next Step]
+    F --> G[End]
