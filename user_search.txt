@@ -616,3 +616,10 @@ Saute has 2 phases :
 Once it reaches 80% of the time the current temperature at phase 1 + 20c is the target temperature for the phase 2 .
 In phase 2 it will try to reach the target temperature , once if it reaches it before time , then  temperature control based logic is implemented .
 Completion of phase 1 is based on 80% time passed for time given for saute and then in phase 2 it runs till the other 20% time is achieved if it achieves before time then it runs temperature control logic .   Software Engineer
+Create  a flowchart for sauté mode in cooking section, Here the completion criteria of this mode is based on time given by the recipe .
+It has setpoint temperature which is set point temperature  =  current temperature + 20c (it is ABF condition).
+Saute has 2 phases :
+1 phase is 80% of the total time alloted for saute ,where it runs on power mode , the power level given is 6 out of 10 scale  based on the vessel type aluminum is 7 and ss vessel is 6 
+Once it reaches 80% of the time the current temperature at phase 1 + 20c is the target temperature for the phase 2 .
+In phase 2 it will try to reach the target temperature , once if it reaches it before time , then  temperature control based logic is implemented .
+Completion of phase 1 is based on 80% time passed for time given for saute and then in phase 2 it runs till the other 20% time is achieved if it achieves before time then it runs temperature control logic .   Software Engineer
