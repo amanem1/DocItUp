@@ -892,3 +892,14 @@ flowchart TD
     I --> I1[Signal Processing]
     I --> I2[Image Compression]
     I --> I3[Vibration Analysis]
+flowchart TD
+    A[Start Preheat Section] --> B[Check Vessel Status]
+    B --> C{Is Vessel Ready?}
+    C -->|No| D[Wait for Vessel to be Ready]
+    D --> B
+    C -->|Yes| E[Start Heating Vessel]
+    E --> F[Monitor Temperature]
+    F --> G{Reached Desired Temperature?}
+    G -->|No| F
+    G -->|Yes| H[Evaporate Water in Vessel]
+    H --> I[Preheat Section Complete]
