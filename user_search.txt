@@ -597,3 +597,9 @@ Oil Smoking is Time or Temperature based control; Temperature set point is +20 o
 Special case
 For oil smoking in case of butter/ghee this entire step will be removed (from RCT(Recipe Creation Tool) end)
  Software Engineer
+Create  a flowchart for Spice Tempering Section in cooking section, here Temperature control directly implemented as low mass load also 
+Before  spice tempering step there always a oil smoking step.
+Spice Tempering is Time or Temperature based control; Temperature set point is +20 of the current temperature when the step is entered else it is  total time is 30sec for any serving scale .
+Special case
+For oil smoking in case of butter/ghee this entire step will come directly after Preheat.
+ Software Engineer
