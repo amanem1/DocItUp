@@ -956,3 +956,23 @@ flowchart TD
     I --> J
     E --> J
     J --> K[End]
+flowchart TD
+    A[Start] --> B{Preheat?}
+    B -->|Yes| C[Oil Smoking]
+    B -->|No| D[Add Oil]
+    
+    C --> E{Using Butter/Ghee?}
+    E -->|Yes| F[Spice Tempering]
+    E -->|No| D
+    
+    D --> G[Oil Smoking]
+    G --> H[Spice Tempering]
+    
+    H --> I{Choose Control Type}
+    I -->|Temperature Based| J[Set Temp: Current Temp + 20]
+    I -->|Time Based| K[Set Time: 30sec]
+    
+    J --> L[Spice Tempering Process]
+    K --> L
+    
+    L --> M[End]
