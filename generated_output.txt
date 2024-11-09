@@ -985,3 +985,24 @@ flowchart TD
     D --> |Time-based| F[Run Timer for 30 seconds]
     E --> G[Complete Tempering]
     F --> G[Complete Tempering]
+flowchart TD
+    A[Start Saute Mode] --> B[Set Setpoint Temperature: Current Temp + 20°C]
+    B --> C[Calculate Phase 1 Time: 80% of Total Time]
+    C --> D{Vessel Type?}
+    D -->|Aluminum| E[Power Level 7/10]
+    D -->|SS| F[Power Level 6/10]
+    
+    E & F --> G[Run Phase 1 in Power Mode]
+    G --> H{80% Time Passed?}
+    H -->|Yes| I[Phase 1 Complete]
+    
+    I --> J[Calculate Target Temp: Current Temp + 20°C]
+    J --> K[Run Phase 2 towards Target Temp]
+    K --> L{Target Temp Reached Before Time?}
+    L -->|Yes| M[Implement Temperature Control Logic]
+    L -->|No| N[Wait Until Phase 2 Time Completes]
+    
+    M --> O[Phase 2 Complete]
+    N --> O
+    
+    O --> P[End Saute Mode]
