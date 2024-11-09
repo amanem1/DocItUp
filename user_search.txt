@@ -583,3 +583,10 @@ Oil Smoking is Time or Temperature based control; Temperature set point is +20 o
 Special case
 For oil smoking in case of butter/ghee this entire step will be removed (from RCT(Recipe Creation Tool) end)
  Software Engineer
+Create  a flowchart for Oil-Smoking Section in cooking section, here Temperature control directly implemented as low mass load also 
+Before Oil smoking step there always a preheat step
+Oil Smoking step always occurs after ADD step.
+Oil Smoking is Time or Temperature based control; Temperature set point is +20 of the current temperature when the step is entered else it is  total time is 30sec for any serving scale .
+Special case
+For oil smoking in case of butter/ghee this entire step will be removed (from RCT(Recipe Creation Tool) end)
+ Software Engineer
