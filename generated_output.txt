@@ -1098,3 +1098,19 @@ flowchart TD
 
     L --> M
     M --> N[End Saute Mode]
+flowchart TD
+    A[Start] --> B[Set Current Temperature]
+    B --> C[Set Point Temperature = Current Temperature + 20°C]
+    C --> D[Phase 1: 80% of Total Time]
+    D --> E{Vessel Type}
+    E -->|Aluminum| F[Power Level = 7]
+    E -->|Stainless Steel| G[Power Level = 6]
+    F --> H[Power Mode on]
+    G --> H
+    H --> I[Phase 1 Complete: 80% Time Elapsed]
+    I --> J[Phase 2: Target Temperature = Phase 1 Current Temperature + 20°C]
+    J --> K{Did Target Temperature Achieve Before Time?}
+    K -->|Yes| L[Implement Temperature Control Logic]
+    K -->|No| M[Continue Until 100% Total Time]
+    L --> M
+    M --> N[End]
