@@ -917,3 +917,17 @@ flowchart TD
     D -->|Proceed| E[Next Step]
     D -->|Stay| C
     E --> F[End]
+flowchart TD
+    A[Start Cooking Section] --> B[Preheat]
+    B --> C[Add Ingredients]
+    C --> D{Type of Oil}
+    D -->|Butter/Ghee| E[Skip Oil Smoking]
+    D -->|Other Oils| F[Enter Oil Smoking Step]
+    F --> G[Temperature or Time Based?]
+    G -->|Temperature| H[Set Temperature +20°C]
+    H --> I[Complete Oil Smoking]
+    G -->|Time| J[Set Timer for 30 sec]
+    J --> I
+    I --> K[Continue Cooking]
+    E --> K
+    K --> L[End]
