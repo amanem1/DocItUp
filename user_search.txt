@@ -663,3 +663,29 @@ Phase 2 ,Set point is previous temperature plus 20-25 c
 Maintain constant power till completion time 
 if temperature reaches target set point go to temperature control and maintain that temperature.A 
  Software Engineer
+Draw a flow chart for simmering mode in cooking session , Simmering is performed after add water step for gravy recipes. 
+There are two inputs required for the control:
+Total time to simmer (given by the RCT)
+Current Vessel Temperature (center probe) (used for burn detection).
+Simmering is based on the REEP {Runtime Estimated Exponential Power} equation which gives  power level as output to the  Control Steps
+First get the total simmer time from RCT
+Calculate the a, b, c exponential equation constants
+let,
+RC = REEP Constant (Derived from RCT inputs)
+p1 = 18, complete max power chosen
+p2 = 14, power chosen at the end of initial stage 1 boiling
+p3 = 7, constant power required to simmer at infinite time, estimated by tests
+c = p3 (constant power required to simmer at infinite time, estimated by tests)
+a = (p2 - c) (the highest power chosen at the end of initial stage 1 boiling, estimated by tests)
+RF is reep factor 
+RF = (ln((p2-c)/a)) /(-10% of total  time for simmering)
+A[power Output of REEP] --> B["a * (e^(-RF*te)) + c"]
+if vessel == ss
+power = power - 1
+if power > 12: power = 12
+if power < 6: power = 6
+else power = power
+if vessel == large vessel
+if power > 14: power = 14
+if power < 7: power = 7
+else power = power Software Engineer
