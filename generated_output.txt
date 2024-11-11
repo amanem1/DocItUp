@@ -1331,3 +1331,15 @@ flowchart TD
     G --> H{Time Completion Criteria Met?}
     H -->|No| G
     H -->|Yes| I[End Process]
+flowchart TD
+    A[Start] --> B[Preheat Pan]
+    B --> C{Is Pan 160°C?}
+    C -->|No| B
+    C -->|Yes| D[Add Meat]
+    D --> E[Check ETP and RCT]
+    E --> F{Is ETP >= Required?}
+    F -->|No| G[Continue Cooking]
+    F -->|Yes| H{Flip Meat?}
+    H -->|No| I[Cooking Complete]
+    H -->|Yes| J[Flip Meat]
+    J --> E
