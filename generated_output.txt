@@ -1212,3 +1212,20 @@ graph TD
     L -->|Yes| J
     L -->|No| M[End Saute Mode]
     K --> M
+flowchart TD
+    A[Start Cooking] --> B{Select Mode}
+    B -->|Boil| C[Hold Power Constant]
+    C --> D{Material Type}
+    D -->|Aluminum| E[Power = 14, Time Driven]
+    D -->|SS| F[Power = 12, Time Driven]
+    E --> G[Maintain Boiling Temp]
+    F --> G
+    G --> H[End Cooking]
+
+    B -->|Pressure Cook| I[Event Driven Process]
+    I --> J{Material Type}
+    J -->|Aluminum| K[Power = 14]
+    J -->|SS| L[Power = 14]
+    K --> M[Event: Maintain Pressure & Heat]
+    L --> M
+    M --> N[End Cooking]
