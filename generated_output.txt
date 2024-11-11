@@ -1229,3 +1229,12 @@ flowchart TD
     K --> M[Event: Maintain Pressure & Heat]
     L --> M
     M --> N[End Cooking]
+graph TD
+    A[Start: Pressure Cooking Process] --> B[Select Material]
+    B -->|Aluminum| C[Set Power to 14]
+    B -->|Stainless Steel| D[Set Power to 14]
+    C --> E[Maintain Pressure Cooking Temperature]
+    D --> E[Maintain Pressure Cooking Temperature]
+    E --> F[Cooking Time Completion Criteria Met?]
+    F -->|Yes| G[Stop Cooking Process]
+    F -->|No| E
