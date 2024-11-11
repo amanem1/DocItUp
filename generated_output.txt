@@ -1284,3 +1284,10 @@ flowchart TD
     E --> F{Temperature >= 180°C?}
     F -->|Yes| G[Follow Temperature Control Logic]
     F -->|No| E
+flowchart TD
+    A[Start] --> B[Preheat to 160°C]
+    B --> C[Add Ingredients]
+    C --> D[Setpoint 180°C]
+    D --> E{Reached 180°C?}
+    E -->|No| D
+    E -->|Yes| F[Follow Temperature Control Logic]
