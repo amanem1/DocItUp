@@ -1311,3 +1311,12 @@ flowchart TD
     F -->|Yes| G[Follow Temperature Control Logic]
     G --> H[Maintain Temperature]
     H --> I[End]
+flowchart TD
+    A[Start] --> B[Add Oil]
+    B --> C[Preheat to 160°C]
+    C --> D[Add Ingredients]
+    D --> E[External Temperature Probe]
+    E --> F{Maintain Temperature to Setpoint}
+    F --> G[Monitor and Adjust Temperature]
+    G --> F
+    F --> H[Process Complete]
