@@ -651,3 +651,15 @@ Saute has 2 phases :
 Once it reaches 80% of the time the current temperature at phase 1 + 20c is the target temperature for the phase 2 .
 In phase 2 it will try to reach the target temperature , once if it reaches it before time , then  temperature control based logic is implemented .
 Completion of phase 1 is based on 80% time passed for time given for saute and then in phase 2 it runs till the other 20% time is achieved if it achieves before time then it runs temperature control logic .   Software Engineer
+Saute mode 
+Divided into two phases ,phase 1 and phase 2 
+Phase 1 equals to 80 % completion time 
+Phase 2 equals to 20 % completion time
+Phase 1 ,Maintain constant power until 80% of RCT time 
+ABF for Phase 1 ,previous temperature plus 20-25 c .
+If Temperature doesn't reach ABF continue till the 80% time.
+If temperature reaches ABF go to temperature control and maintain that temperature for rest of time.
+Phase 2 ,Set point is previous temperature plus 20-25 c 
+Maintain constant power till completion time 
+if temperature reaches target set point go to temperature control and maintain that temperature.A 
+ Software Engineer
