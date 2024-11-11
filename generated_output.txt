@@ -1320,3 +1320,14 @@ flowchart TD
     F --> G[Monitor and Adjust Temperature]
     G --> F
     F --> H[Process Complete]
+flowchart TD
+    A[Start] --> B[Add Oil to Container]
+    B --> C[Preheat to RCT Temperature]
+    C --> D[Check External Temperature Probe]
+    D --> E{Is RCT Temperature Reached?}
+    E -->|No| D
+    E -->|Yes| F[Add Ingredients]
+    F --> G[Maintain RCT Temperature]
+    G --> H{Time Completion Criteria Met?}
+    H -->|No| G
+    H -->|Yes| I[End Process]
