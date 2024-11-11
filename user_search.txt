@@ -689,3 +689,6 @@ if vessel == large vessel
 if power > 14: power = 14
 if power < 7: power = 7
 else power = power Software Engineer
+draw a flow diagram for creating water boil mode in cooking .
+Here power is kept constant , and completion criteria is time , for aluminum power is 14 , for ss :12,
+it maintains boiling temperature through out time in boiling  Product Manager
