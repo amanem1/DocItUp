@@ -724,3 +724,5 @@ draw a flow diagram for "pressure cooking" for cooking , it is similar to boilin
 Here power is kept constant , and completion criteria is time , for aluminum power is 14 , for ss :12,
 it maintains boiling temperature through out time in boiling 
 draw a flow diagram for "pressure cooking" for cooking , it is similar to boiling ,but it is event driven , aluminum is 14 and ss is 14. Product Manager
+draw a flow diagram for "flat bread " for cooking . It is based on CTP based temp control , here power level is based on temperature control ,and it is to be maintained at 160-180 c ,
+It is to be preheated till 120c and add ingredients at 160c , and then it is to be maintained at 180 for required time . Product Manager
