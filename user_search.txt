@@ -735,3 +735,5 @@ draw flow diagram for external temperature  probe for deep fry mode , For Deep f
 first preheat upto 160c and  then add ingredients , setpoint will be 180c ,and if reaches 180 follow temperature control logic. Product Manager
 draw flow diagram for external temperature  probe for deep fry mode , For Deep fry temperature is same as the basic temperature control but the input temperature value is taken from external temperature probe.
 first add oil and preheat upto 160c and  then add ingredients , setpoint will be 180c ,and if reaches 180 follow temperature control logic. Product Manager
+draw flow diagram for external temperature  probe for deep fry mode , For Deep fry temperature is same as the basic temperature control but the input temperature value is taken from external temperature probe.
+first add oil and preheat upto 160c and  then add ingredients , setpoint will be 180c ,and if reaches 180 follow temperature control logic. Product Manager
