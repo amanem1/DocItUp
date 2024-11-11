@@ -1238,3 +1238,17 @@ graph TD
     E --> F[Cooking Time Completion Criteria Met?]
     F -->|Yes| G[Stop Cooking Process]
     F -->|No| E
+flowchart TD
+    A[Start] --> B[Preheat]
+    B --> C{Temperature < 120°C?}
+    C -->|Yes| B
+    C -->|No| D[Proceed to Cooking]
+    D --> E{Temperature 160°C?}
+    E -->|No| D
+    E -->|Yes| F[Add Ingredients]
+    F --> G[Maintain Cooking Temperature]
+    G --> H{Temperature 160-180°C?}
+    H -->|No| G
+    H -->|Yes| I[Maintain at 180°C for Required Time]
+    I --> J[Completion]
+    J --> K[Serve Hot]
