@@ -1252,3 +1252,19 @@ flowchart TD
     H -->|Yes| I[Maintain at 180°C for Required Time]
     I --> J[Completion]
     J --> K[Serve Hot]
+flowchart TD
+    A[Start] --> B[Prepare Ingredients]
+    B --> C[Add Little Oil to Pan]
+    C --> D[Preheat Oil]
+    D --> E{Is oil temperature 160-180°C?}
+    E -->|No| F[Continue Heating]
+    F --> D
+    E -->|Yes| G[Add Ingredients to Oil]
+    G --> H[Shallow Fry While Monitoring Temperature]
+    H --> I{Ingredients Fried Properly?}
+    I -->|No| J[Continue Frying]
+    J --> H
+    I -->|Yes| K[Remove Ingredients from Pan]
+    K --> L[Drain Excess Oil]
+    L --> M[Serve]
+    M --> N[End]
