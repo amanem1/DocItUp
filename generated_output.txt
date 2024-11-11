@@ -1174,3 +1174,23 @@ flowchart TD
     Timer --> CompletionCriteria{Time Reached?}
     CompletionCriteria -->|Yes| Finish([Finish])
     CompletionCriteria -->|No| Boil
+graph TD
+    A[Saute Mode] --> B[Phase 1]
+    A --> C[Phase 2]
+
+    B --> B1[80% Completion Time]
+    C --> C1[20% Completion Time]
+
+    B --> B2[Maintain Constant Power until 80% RCT]
+    B --> B3{Reached ABF?}
+    B3 -- Yes --> B4[Temperature Control: Maintain ABF]
+    B3 -- No --> B5[Continue till 80% Time or Reach ABF]
+
+    B2 --> B3
+    B5 --> B4
+
+    C --> C2[Set Point: Prev Temp + 20-25°C]
+    C2 --> C3[Maintain Constant Power]
+    C3 --> C4{Reached Target Set Point?}
+    C4 -- Yes --> C5[Temperature Control: Maintain Set Point]
+    C4 -- No --> C3
