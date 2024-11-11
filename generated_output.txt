@@ -1291,3 +1291,13 @@ flowchart TD
     D --> E{Reached 180°C?}
     E -->|No| D
     E -->|Yes| F[Follow Temperature Control Logic]
+flowchart TD
+    A[Start Deep Fry Mode] --> B[Add Oil]
+    B --> C[Preheat Oil]
+    C --> D{Temperature Probe Reading}
+    D -->|<160°C| C
+    D -->|>=160°C| E[Add Ingredients]
+    E --> F[Set Setpoint to 180°C]
+    F --> G{Reach 180°C?}
+    G -->|No| F
+    G -->|Yes| H[Temperature Control Logic]
