@@ -1114,3 +1114,19 @@ flowchart TD
     K -->|No| M[Continue Until 100% Total Time]
     L --> M
     M --> N[End]
+flowchart TD
+    A[Start Saute Mode] --> B{Phase 1: 80% RCT}
+    B --> C[Maintain constant power]
+    C --> D{Temperature < ABF?}
+    D -- Yes --> E[Continue till 80% time]
+    D -- No --> F[Temperature control: Maintain ABF]
+    F --> G{80% of RCT completed?}
+    E --> G
+    G -- Yes --> H{Phase 2: 20% RCT}
+    H --> I[Set point = Previous temperature + 20-25°C]
+    I --> J[Maintain constant power]
+    J --> K{Temperature < Set point?}
+    K -- Yes --> L[Continue till completion time]
+    K -- No --> M[Temperature control: Maintain set point]
+    L --> N[End]
+    M --> N
