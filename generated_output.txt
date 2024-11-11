@@ -1194,3 +1194,21 @@ graph TD
     C3 --> C4{Reached Target Set Point?}
     C4 -- Yes --> C5[Temperature Control: Maintain Set Point]
     C4 -- No --> C3
+graph TD
+    A[Start Saute Mode]
+    A --> B[Phase 1: 80% Completion Time]
+    B --> C{Temperature < ABF?}
+    C -->|Yes| D[Continue Constant Power]
+    C -->|No| E[Temperature Control: Maintain ABF]
+    D --> F{Time < 80% RCT?}
+    F -->|Yes| D
+    F -->|No| G[Phase 2: 20% Completion Time]
+    E --> G
+    G --> H[Set Point: Prev. Temp + 20-25°C]
+    H --> I{Temperature < Set Point?}
+    I -->|Yes| J[Continue Constant Power]
+    I -->|No| K[Temperature Control: Maintain Set Point]
+    J --> L{Time < 100% RCT?}
+    L -->|Yes| J
+    L -->|No| M[End Saute Mode]
+    K --> M
