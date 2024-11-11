@@ -727,3 +727,5 @@ draw a flow diagram for "pressure cooking" for cooking , it is similar to boilin
 draw a flow diagram for "flat bread " for cooking . It is based on CTP based temp control , here power level is based on temperature control ,and it is to be maintained at 160-180 c ,
 It is to be preheated till 120c and add ingredients at 160c , and then it is to be maintained at 180 for required time . Product Manager
 draw a flow diagram for "shallow fry" for cooking . It is based on ctp temperature control based ,requires atleast 180-160c , little bit oil is required to fry , which is preheated .  Product Manager
+draw flow diagram for external temperature  probe for deep fry mode , For Deep fry temperature is same as the basic temperature control but the input temperature value is taken from external temperature probe.
+first preheat upto 160c and  then add ingredients , setpoint will be 180c ,and if reaches 180 follow temperature control logic. Product Manager
