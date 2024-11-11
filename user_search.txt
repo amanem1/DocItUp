@@ -692,3 +692,15 @@ else power = power Software Engineer
 draw a flow diagram for creating water boil mode in cooking .
 Here power is kept constant , and completion criteria is time , for aluminum power is 14 , for ss :12,
 it maintains boiling temperature through out time in boiling  Product Manager
+Saute mode 
+Divided into two phases ,phase 1 and phase 2 
+Phase 1 equals to 80 % completion time 
+Phase 2 equals to 20 % completion time
+Phase 1 ,Maintain constant power until 80% of RCT time 
+ABF for Phase 1 ,previous temperature plus 20-25 c .
+If Temperature doesn't reach ABF continue till the 80% time.
+If temperature reaches ABF go to temperature control and maintain that temperature for rest of time.
+Phase 2 ,Set point is previous temperature plus 20-25 c 
+Maintain constant power till completion time 
+if temperature reaches target set point go to temperature control and maintain that temperature.A 
+ Product Manager
