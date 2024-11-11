@@ -1268,3 +1268,11 @@ flowchart TD
     K --> L[Drain Excess Oil]
     L --> M[Serve]
     M --> N[End]
+flowchart TD
+    A[Start] --> B[Preheat up to 160°C]
+    B --> C[Add Ingredients]
+    C --> D[Setpoint: 180°C]
+    D --> E{Temperature Probe Reading}
+    E -->|<180°C| F[Continue Heating]
+    E -->|=180°C| G[Follow Temperature Control Logic]
+    F --> E
