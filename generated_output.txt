@@ -1130,3 +1130,36 @@ flowchart TD
     K -- No --> M[Temperature control: Maintain set point]
     L --> N[End]
     M --> N
+```mermaid
+flowchart TD
+    Start([Start]) --> A[Get total simmer time from RCT]
+    A --> B[Calculate a, b, c exponential equation constants]
+    B --> C[Calculate RC = REEP Constant]
+    C --> D[Calculate RF = (ln((p2-c)/a)) / (-10% of total time for simmering)]
+
+    subgraph REEP_Calculation[REEP Power Calculation]
+        D --> E[Calculate Power Output of REEP]
+        E --> F["Power = a * (e^(-RF*te)) + c"]
+    end
+
+    REEP_Calculation --> G{Check vessel type}
+
+    G -->|Vessel is SS| H[Power = Power - 1]
+    G -->|Large Vessel| I{Power > 14}
+    G -->|Other| J{Power > 12}
+
+    H --> J
+    I -- Yes --> K[Power = 14]
+    I -- No --> L{Power < 7}
+
+    J -- Yes --> M[Power = 12]
+    J -- No --> N{Power < 6}
+
+    L -- Yes --> O[Power = 7]
+    L -- No --> P[Set Power from REEP]
+
+    N -- Yes --> Q[Power = 6]
+    N -- No --> P
+
+    P --> End([End])
+```
