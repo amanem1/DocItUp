@@ -1343,3 +1343,26 @@ flowchart TD
     H -->|No| I[Cooking Complete]
     H -->|Yes| J[Flip Meat]
     J --> E
+flowchart TD
+    A[EP1 Scope Definition] --> B[Current Application Control]
+    A --> C[Future Scope: Hybrid Approach]
+    A --> D[Test Plan for Sensor Needs]
+    A --> E[Define Use Cases]
+    A --> F[Test Warm Mode Functionality]
+    A --> G[Conduct FMEA for Rice Subsystem]
+    A --> H[Current System Temperature Values]
+
+    subgraph Final Rice Control Logic
+        I[Stage 1: Time Based]
+        I --> J[End Time = 8min]
+        J --> K{Current Temp < 75°C}
+        K -->|Yes| L[Switch to Temperature Based]
+        L --> M[Setpoint = 75°C]
+        K -->|No| N[Continue Time Based]
+
+        O[Stage 2: Temperature Based]
+        O --> P[Setpoint = 110°C]
+        P --> Q{Elapsed Time < 10min && Current Temp = 110°C}
+        Q -->|Yes| R[Setpoint = 120°C]
+        Q -->|No| S[Maintain 110°C]
+    end
