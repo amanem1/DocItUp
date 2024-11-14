@@ -744,3 +744,25 @@ first add oil and preheat upto RCT temperature value and  then add ingredients ,
 draw flow diagram for external temperature  probe for sous vide , For  sous vide temperature is same as the basic temperature control but the input temperature value is taken from external temperature probe.
 first add oil and preheat upto RCT temperature value and  then add ingredients , maintain temperauture to given rct temperature for given time as completion criteria Product Manager
 create flow diagram for searing mode in cooking , it uses both CTP and ETP sensors for temperature control , Hear first preheat pan for 160c and add meat , cooking completion criteria is ETP temperature wrt RCT temperature given and follow same for flipping the meat again until reached conditions as ETP temperature . Product Manager
+EP1 Scope definition
+So currently as the first stage is time based but the fascinating part is the temperature to trigger is still between 80-85. But the case of failure mode is still not properly tackled still, which we suspect will take time for development so it is ok to go ahead with current control for recipe development.
+MOM 12 May 2023
+The current application control we are ok with
+For future scope we will be going in hybrid approach
+Create test plan for sensor need for lid detection effect on quality, effect on product and effect on user(should be finalized in EP1)
+Define the use cases and get the alignment with the team.
+Test warm mode functionality
+FMEA should be done for rice sub system
+Current system temperature values with respect to entire boundaries.
+Final Rice Control Logic 7/11/2023
+Using CCSA control logic, Where type of set point changes according to context of cooking.
+Stage 1
+Time base, while end time= 8min
+While at end time, Current temp<75
+Then switch to temperature based with set point= 75
+Else (Time based)
+Stage 2
+Temperature based, setpoint= 110°Ce
+If elapsed time<10min and current temp=110°C,
+Then Setpoint= 120°C
+Else (110°C) Software Engineer
