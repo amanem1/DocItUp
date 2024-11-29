@@ -1366,3 +1366,39 @@ flowchart TD
         Q -->|Yes| R[Setpoint = 120°C]
         Q -->|No| S[Maintain 110°C]
     end
+```mermaid
+flowchart TD
+    A[Libwebsockets (LWS) Communication Layer] --> B[Event Loop]
+    A --> C[HTTP/1.x and HTTP/2 Support]
+    A --> D[WebSocket Protocol]
+    A --> E[SSL/TLS Integration]
+    A --> F[RAW Socket Handling]
+    A --> G[File and Network IO]
+    A --> H[Thread Safety and SMP]
+    
+    B --> B1[Poll-Based Event Loop]
+    B --> B2[Libev, Libuv, Libevent Integration]
+
+    C --> C1[HTTP/1.x]
+    C --> C2[HTTP/2 via LWS_WITH_HTTP2]
+
+    D --> D1[Client and Server Modes]
+    D --> D2[WebSocket Extensions]
+
+    E --> E1[SSL_CTX Configuration]
+    E --> E2[SSL/TLS Certificate Management]
+
+    F --> F1[RAW Server Sockets]
+    F --> F2[RAW Client Sockets]
+    F --> F3[RAW UDP Sockets]
+
+    G --> G1[Platform Independent File Access]
+    G --> G2[External Polling Loop Support]
+
+    H --> H1[SMP Support]
+    H --> H2[Mutex Helpers]
+
+    B2 --> B3[LIBEV]
+    B2 --> B4[LIBUV]
+    B2 --> B5[LIBEVENT]
+```
