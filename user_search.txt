@@ -1565,3 +1565,45 @@ If this file exists, it can be used to style the error page. See https://libwebs
 
 
 explain this lws communication layer.  Software Engineer
+low Diagram Description:
+Start:
+
+The program starts.
+Get MAC ID:
+
+The user is prompted to enter a MAC ID.
+Find Available Ports:
+
+The function find_available_ports is called to list available serial ports.
+Each port is printed, and the list of available ports is returned.
+Check Available Ports:
+
+If no available ports are found, an error message is displayed, and the program ends.
+Select a COM Port:
+
+The user is asked to select a COM port from the available list.
+If the selected port is invalid, an error message is shown.
+Start Serial Communication:
+
+The read_serial function is called with the provided MAC ID and selected COM port.
+The program opens the serial connection at a baud rate of 115200.
+Start Reading Command:
+
+The program listens for the "start reading" command from the serial device. When received, the reading starts, and the start time is recorded.
+Check ADC Value:
+
+If the reading has started, the program checks if the line contains "adcval".
+If it does, it extracts the value, converts it to float, prints the value, and writes it to a CSV file. It also appends the value to skew_array.
+Elapsed Time Check:
+
+If 90 seconds (1.5 minutes) have passed since the reading started, the program stops reading and exits the loop.
+Calculate Skewness:
+
+After the reading ends, the program calculates the skewness of the captured values in skew_array.
+If the skewness is between -1 and 1, the load cell is good; otherwise, it's bad.
+End:
+
+The program ends.
+
+
+convert to a flowchart Software Lead Engineer
