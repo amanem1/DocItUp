@@ -1402,3 +1402,27 @@ flowchart TD
     B2 --> B4[LIBUV]
     B2 --> B5[LIBEVENT]
 ```
+flowchart TD
+    A(Start) --> B[Get MAC ID]
+    B --> C{Find Available Ports}
+    C -->|Yes| D[Check Available Ports]
+    C -->|No| H[Error: No ports found]
+    D --> E{Select a COM Port}
+    E -->|Valid| F[Start Serial Communication]
+    E -->|Invalid| I[Error: Invalid port]
+    F --> G[Start Reading Command]
+    G --> J{Check ADC Value}
+    J -->|Yes| K[Extract & Convert Value]
+    K --> L[Print & Write to CSV]
+    L --> M[Append to skew_array]
+    J -->|No| G
+    F --> N[Elapsed Time Check]
+    N -->|<90s| G
+    N -->|>=90s| O[Calculate Skewness]
+    O --> P{Skewness between -1 and 1?}
+    P -->|Yes| Q[Load cell is good]
+    P -->|No| R[Load cell is bad]
+    Q --> S(End)
+    R --> S
+    H --> S
+    I --> S
