@@ -1607,3 +1607,5 @@ The program ends.
 
 
 convert to a flowchart Software Lead Engineer
+Write logic to run the induction for 30 seconds on full power then see the temperature difference between the consecutive two values if the difference is less than 0.8 from then turnoff the induction after 10 seconds. 
+ Software Engineer
