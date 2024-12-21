@@ -1426,3 +1426,9 @@ flowchart TD
     R --> S
     H --> S
     I --> S
+flowchart TD
+    Start(Induction Process) --> A[Run Induction on Full Power for 30 seconds]
+    A --> B{Temperature Difference < 0.8?}
+    B -- Yes --> C[Continue for 10 seconds]
+    C --> D[Turn Off Induction]
+    B -- No --> A
