@@ -1658,3 +1658,52 @@ Option to enter number of boils
 
 give me a flow diagram for this 
   Software Engineer
+Slope based 
+Input : 
+Milk quantity 
+Water quantity 
+
+To be calculated : 
+Time for dispense of milk and water 
+
+Dispense time calculation :
+
+Tota
+For water 
+Time = (29.5 * x)/(250) 	
+For milk 
+Time = (28 * x)/(250)
+
+Where ,
+X = Quantity to be dispensed respectively 
+Note :
+The  highlighted value are based on the motor dispense accuracy,allow an option to change this value. In case other motor is used there might be some variation.
+	 
+
+Total time for slope consideration based on the following conditions 
+100 ml - 22 seconds time elapsed 
+Between 100 - 200 ml dispense time + 15 seconds
+Above 200 ml - dispense time + 20 seconds
+
+Slope calculation :
+Calculate the temperature  for every second until the above said conditions
+Add all the values
+Slope adjustment factor : 
+For 100 ml ,add 3 to the slope value 
+For 250 ml ,divide the obtained value by 1.5 
+For 500 ml , divide the obtained slope by 2.5
+For 750 ml , divide the obtained slope by 3
+For other volume consider the slope value obtained ,no need to divide or adjust 
+Boil detection 
+After the time for slope is completed, record the temperature difference between every consecutive steps.
+If the temperature difference is less than the slope value then the boil is started.
+Continue heating for x seconds after boil started - (keep some variable to adjust the x value)
+Note : During the second step,there will be zero values while calculating the consecutive temperature values those should be ignored.
+
+Consecutive boil 
+Provide option to give the heating time and cooling time duration 
+Option to enter number of boils
+
+
+give me a flow diagram for this 
+  Software Engineer
