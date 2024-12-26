@@ -1432,3 +1432,55 @@ flowchart TD
     B -- Yes --> C[Continue for 10 seconds]
     C --> D[Turn Off Induction]
     B -- No --> A
+```mermaid
+flowchart TD
+    A[Start] --> B[Input Milk and Water Quantity]
+    B --> C{Choose Motor Dispense Settings}
+    C --> D[Calculate Dispense Time for Water]
+    C --> E[Calculate Dispense Time for Milk]
+    
+    D --> F[Time = (29.5 * Water Quantity)/250]
+    E --> G[Time = (28 * Milk Quantity)/250]
+    
+    F --> H[Calculate Total Dispense Time]
+    G --> H
+    
+    H --> I{Slope Consideration}
+    I --> J[100 ml - Add 22 seconds]
+    I --> K[100-200 ml - Add 15 seconds]
+    I --> L[Above 200 ml - Add 20 seconds]
+    
+    J --> M[Calculate Temperature for Each Second]
+    K --> M
+    L --> M
+    
+    M --> N[Add All Temperature Values]
+    N --> O{Slope Adjustment Factor}
+    
+    O --> P[100 ml, Add 3]
+    O --> Q[250 ml, Divide by 1.5]
+    O --> R[500 ml, Divide by 2.5]
+    O --> S[750 ml, Divide by 3]
+    O --> T[Others, No Adjustment]
+    
+    P --> U[Calculate Adjusted Slope]
+    Q --> U
+    R --> U
+    S --> U
+    T --> U
+    
+    U --> V[Check Boil Detection]
+    V --> W[Calculate Temperature Difference]
+    
+    W --> X{Temperature Difference < Slope Value}
+    X -- Yes --> Y[Boil Started]
+    Y --> Z[Continue Heating for X Seconds]
+    
+    X -- No --> AA[Return to Check]
+    
+    Z --> AB[Option for Consecutive Boil]
+    AB --> AC[Input Heating and Cooling Time]
+    AC --> AD[Input Number of Boils]
+    
+    AD --> AE[End]
+```
